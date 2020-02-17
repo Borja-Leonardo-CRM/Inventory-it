@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const schema = new mongoose.Schema({
+const schemaUser = new mongoose.Schema({
   username: { type: String, unique: true, index: true },
   password: String,
   roll: { type: String, default: 0 }
@@ -10,7 +10,7 @@ const schema = new mongoose.Schema({
 que el roll por defecto sea 0, de manera que 0 sea igual a EDITOR y,
 por ejemplo, 1, sea igual a Administrador. */
 
-const model = mongoose.model("user", schema); // Aquí generamos la BBDD
+const model = mongoose.model("user", schemaUser); // Aquí generamos la BBDD
 
 // Aquí comprobamos que el usuario sea único. Investigar.z
 model.collection
