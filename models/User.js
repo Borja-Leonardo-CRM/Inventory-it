@@ -2,8 +2,7 @@ const mongoose = require("mongoose");
 
 const schemaUser = new mongoose.Schema({
   username: { type: String, unique: true, index: true },
-  password: String,
-  roll: { type: String, default: 0 }
+  password: String
 });
 
 /* Investigar bien lo del usuario único. También he puesto 
