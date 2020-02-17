@@ -2,15 +2,9 @@ const mongoose = require("mongoose");
 
 const schemaEmployees = new mongoose.Schema({
   name: String,
-  position: String,
-  roll: String,
-  inventory: {
-    components: { type: String, number: Number, reference: [], default: false },
-    phone: { type: String, number: Number, reference: [], default: false },
-    computer: { type: String, number: Number, reference: [], default: false },
-    screens: { type: String, number: Number, reference: [], dfault: false }
-  }
+  department: String,
+  equipmentsId: []
 });
 
-const model = mongoose.model("user", schemaEmployees);
+const model = mongoose.model("employee", schemaEmployees);
 module.exports = model;
