@@ -1,8 +1,12 @@
 const mongoose = require("mongoose");
 
 const schemaUser = new mongoose.Schema({
-  username: { type: String, unique: true, index: true },
-  password: String
+  username: {
+    type: String,
+    unique: true,
+    index: true
+  },
+  password: String,
 });
 
 /* Investigar bien lo del usuario único. También he puesto 
@@ -13,12 +17,12 @@ const model = mongoose.model("user", schemaUser); // Aquí generamos la BBDD
 
 // Aquí comprobamos que el usuario sea único. Investigar.z
 model.collection
-  .createIndexes([
-    {
-      key: { username: 1 },
-      name: "username"
-    }
-  ])
+  .createIndexes([{
+    key: {
+      username: 1
+    },
+    name: "username"
+  }])
   .catch(e => console.log(e));
 
 module.exports = model;
