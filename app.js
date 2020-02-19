@@ -7,8 +7,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const session = require("express-session");
 const MongoStore = require("connect-mongo")(session);
-const passportRouter = express.Router();
-const LocalStrategy = require("passport-local").Strategy;
+const passport = require("passport");
 const bodyParser = require("body-parser");
 
 mongoose
@@ -50,9 +49,10 @@ app.use(
     })
   })
 );
+
 // app.use(flash());
 
-// require("./passport")(app);
+require("./passport")(app);
 
 // Express View engine setup
 app.use(
