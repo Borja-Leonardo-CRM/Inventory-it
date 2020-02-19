@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const Employees = require("../models/employees");
+const Employees = require("../models/Employees");
 
 // CRUD -> (R) Retrieve
 router.get("/", async (req, res, next) => {
