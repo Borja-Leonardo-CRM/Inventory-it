@@ -17,9 +17,7 @@ router.get("/", async (req, res, next) => {
 /* GET find a employee according to its id */
 router.get("/:id", async (req, res, next) => {
   try {
-    const {
-      id
-    } = req.params;
+    const { id } = req.params;
     const employees = await Employees.findById(id);
     res.render("employees/showEmployee", {
       celebrity
@@ -28,6 +26,5 @@ router.get("/:id", async (req, res, next) => {
     console.log(`Employees.js - Error finding employee by id ${error}`);
   }
 });
-
 
 module.exports = router;
