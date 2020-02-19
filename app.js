@@ -8,7 +8,6 @@ const mongoose = require("mongoose");
 const session = require("express-session");
 const MongoStore = require("connect-mongo")(session);
 const passportRouter = require("passport");
-const LocalStrategy = require("passport-local").Strategy;
 const bodyParser = require("body-parser");
 
 mongoose
@@ -46,6 +45,7 @@ app.use(
     store: new MongoStore({ mongooseConnection: mongoose.connection })
   })
 );
+
 // app.use(flash());
 
 // require("./passport")(app);

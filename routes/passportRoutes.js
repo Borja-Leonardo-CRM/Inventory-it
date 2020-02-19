@@ -2,7 +2,7 @@ const express = require("express");
 const passportRouter = express.Router();
 const User = require("../models/User"); // Require user model
 const passport = require("passport"); // Add passport
-//LocalStrategy = require("passport-local").Strategy;
+const { hashPassword } = require("../lib/hashing");
 
 // Signin route
 passportRouter.get("/signup", (req, res, next) => {
@@ -20,11 +20,24 @@ passportRouter.post("/signup", async (req, res, next) => {
   } else {
     await User.create({
       username,
-      password
+      password: hashPassword(password)
     });
   }
 
   return res.redirect("/");
 });
+
+// Login route
+passportRouter.get("/login", (req, res, next) => {
+  res.render("passport/login");
+});
+
+passportRouter.post(
+  "login",
+  passport.authenticate("local", {
+    successRedirect: "/",
+    failureRedirect: "/"
+  })
+);
 
 module.exports = passportRouter;
