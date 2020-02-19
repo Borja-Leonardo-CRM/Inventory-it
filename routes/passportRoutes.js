@@ -33,10 +33,10 @@ passportRouter.get("/login", (req, res, next) => {
 });
 
 passportRouter.post(
-  "login",
-  passport.authenticate("local", {
+  "/login",
+  passport.authenticate("authLogin", {
     successRedirect: "/",
-    failureRedirect: "/"
+    failureRedirect: "/login"
   })
 );
 

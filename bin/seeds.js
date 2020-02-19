@@ -1,9 +1,9 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 
-const Employee = require('../models/Employees');
-const Equipments = require('../models/Equipments');
+const Employee = require("../models/Employees");
+const Equipments = require("../models/Equipments");
 
-const DB_NAME = 'invetory-db';
+const DB_NAME = "invetory-db";
 
 mongoose.connect(`mongodb://localhost/${DB_NAME}`, {
   useCreateIndex: true,
@@ -14,7 +14,8 @@ mongoose.connect(`mongodb://localhost/${DB_NAME}`, {
 Employee.collection.drop();
 Equipments.collection.drop();
 
-const employees = [{
+const employees = [
+  {
     name: "Leonardo Di Caprio",
     department: "Law",
     equipmentsId: []
@@ -22,24 +23,24 @@ const employees = [{
   {
     name: "George Clooney",
     department: "Marketing",
-    equipmentsId: [],
+    equipmentsId: []
   },
   {
     name: "Keanu Reeves",
     department: "IT",
-    equipmentsId: [],
+    equipmentsId: []
   },
   {
     name: "Antonio Banderas",
     department: "Finantial",
-    equipmentsId: [],
+    equipmentsId: []
   },
   {
     name: "Anthony Hopkins",
     department: "CEO",
-    equipmentsId: [],
+    equipmentsId: []
   }
-]
+];
 
 Employee.create(employees, err => {
   if (err) {
@@ -49,42 +50,48 @@ Employee.create(employees, err => {
   mongoose.connection.close();
 });
 
-const equipments = [{
+const equipments = [
+  {
     reference: "210",
     name: "Monitor 20'",
     model: "DELL",
     stock: 50,
-    url: "https://www.amazon.es/gp/browse.html?node=937994031&ref_=nav_em_T1_0_4_13_3__des",
+    url:
+      "https://www.amazon.es/gp/browse.html?node=937994031&ref_=nav_em_T1_0_4_13_3__des"
   },
   {
     reference: "120",
     name: "Keyboard'",
     model: "DELL",
     stock: 50,
-    url: "https://www.amazon.es/gp/browse.html?node=937994031&ref_=nav_em_T1_0_4_13_3__des",
+    url:
+      "https://www.amazon.es/gp/browse.html?node=937994031&ref_=nav_em_T1_0_4_13_3__des"
   },
   {
     reference: "230",
     name: "Mouse'",
     model: "DELL",
     stock: 50,
-    url: "https://www.amazon.es/gp/browse.html?node=937994031&ref_=nav_em_T1_0_4_13_3__des",
+    url:
+      "https://www.amazon.es/gp/browse.html?node=937994031&ref_=nav_em_T1_0_4_13_3__des"
   },
   {
     reference: "56",
     name: "Phone terminal",
     model: "CISCO",
     stock: 50,
-    url: "https://www.amazon.es/gp/browse.html?node=937994031&ref_=nav_em_T1_0_4_13_3__des",
+    url:
+      "https://www.amazon.es/gp/browse.html?node=937994031&ref_=nav_em_T1_0_4_13_3__des"
   },
   {
     reference: "65AB",
     name: "Headphones",
     model: "Jabra",
     stock: 50,
-    url: "https://www.amazon.es/gp/browse.html?node=937994031&ref_=nav_em_T1_0_4_13_3__des",
+    url:
+      "https://www.amazon.es/gp/browse.html?node=937994031&ref_=nav_em_T1_0_4_13_3__des"
   }
-]
+];
 
 Equipments.create(equipments, err => {
   if (err) {

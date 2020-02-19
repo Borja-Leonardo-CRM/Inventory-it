@@ -1,6 +1,16 @@
 const passport = require("passport");
 const LocalStrategy = require("passport-local").Strategy;
-const User = require("../models/User");
+const User = require("../../models/User");
+
+// passport.serializeUser((user, callback) => {
+//   callback(null, user._id);
+// });
+
+// passport.deserializeUser((id, callback) => {
+//   User.findById(id)
+//     .then(user => callback(null, user))
+//     .catch(e => callback(err));
+// });
 
 passport.use(
   new LocalStrategy(async (username, password, done) => {
@@ -18,16 +28,6 @@ passport.use(
     }
   })
 );
-
-passport.serializeUser((user, callback) => {
-  callback(null, user._id);
-});
-
-passport.deserializeUser((id, callback) => {
-  User.findById(id)
-    .then(user => callback(null, user))
-    .catch(e => callback(err));
-});
 
 module.exports = app => {
   app.use(passport.initialize());
