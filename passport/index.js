@@ -1,6 +1,8 @@
 const passport = require("passport");
 const User = require("../models/User");
 
+require("./strategies/local");
+
 passport.serializeUser((user, callback) => {
   callback(null, user._id);
 });

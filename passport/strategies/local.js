@@ -1,6 +1,7 @@
 const passport = require("passport");
 const LocalStrategy = require("passport-local").Strategy;
 const User = require("../../models/User");
+const { checkHashed } = require("../../lib/hashing");
 
 // passport.serializeUser((user, callback) => {
 //   callback(null, user._id);
@@ -18,7 +19,7 @@ passport.use(
       const foundUser = await User.findOne({ username });
       if (foundUser) {
         checkHashed(password, foundUser.password)
-          ? DelayNode(null, foundUser)
+          ? done(null, foundUser)
           : done(null, false);
       } else {
         done(null, false);
