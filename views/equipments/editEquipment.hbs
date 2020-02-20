@@ -1,0 +1,27 @@
+<h2>Item: {{equipments.name}}</h2>
+
+<form id="form-equipments">
+    <div>
+        <label for="refence">REFERENCE</label><br>
+        <input type="number" name="reference" value="{{equipments.reference}}">
+    </div>
+    <div>
+        <label for="name">NAME</label><br>
+        <input type="text" name="name" value="{{equipments.name}}">
+    </div>
+    <div>
+        <label for="model">MODEL</label><br>
+        <input type="text" name="model" value="{{equipments.model}}">
+    </div>
+    <div>
+        <label for="number">STOCK</label><br>
+        <input type="number" name="number" value="{{equipments.number}}">
+    </div>
+    <div>
+        <label for="url">URL</label><br>
+        <input type="text" name="url" value="{{equipments.url}}">
+    </div>
+</form>
+<a href=" /equipments/{{_id}}/edit">
+    <button>EDITAR</button>
+</a>

@@ -35,9 +35,11 @@ const app = express();
 //  Setup
 // app.use(logger("dev"));
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({
-  extended: false
-}));
+app.use(
+  bodyParser.urlencoded({
+    extended: false
+  })
+);
 app.use(cookieParser());
 app.use(
   session({
@@ -67,7 +69,6 @@ app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "hbs");
 app.use(express.static(path.join(__dirname, "public")));
 
-
 // Routes middleware goes here
 
 const index = require("./routes/index");
@@ -78,5 +79,8 @@ app.use("/", passportRoutes);
 
 const crudEmployees = require("./routes/crudEmployees");
 app.use("/employees", crudEmployees);
+
+const crudEquipments = require("./routes/crudEquipments");
+app.use("/equipments", crudEquipments);
 
 module.exports = app;
