@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const Employees = require("../models/employees");
+const Employees = require("../models/Employees");
 
 // CRUD -> (R) Retrieve
 router.get("/", async (req, res, next) => {
@@ -25,13 +25,14 @@ router.post("/new", async (req, res, next) => {
 
   try {
     const employee = new Employees({
+      identity: req.body.identity,
       name: req.body.name,
       department: req.body.department,
       equipmentsId: req.body.equipmentsId
     });
     const obj = await Employees.create(employee);
     console.log(`Employees.js - Added new employee ${obj}`);
-    res.redirect("/employees");
+    res.redirect("/employees/");
   } catch (error) {
     console.log(`Employees.js - Error adding new employee ${error}`);
     res.render("employees/newEmployee");
