@@ -1,0 +1,25 @@
+<div class="container">
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>IDENTITY</th>
+        <th>NAME</th>
+        <th>DEPARTMENT</th>
+        <th>EQUIPMENT</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each employees}}
+      <tr>
+        <td>{{ identity }}</td>
+        <td>{{ name }}</td>
+        <td>{{ department }}</td>
+        <td>{{ equipmentsId }}</td>
+      </tr>
+      {{/each}}
+    </tbody>
+  </table>
+  <div class="add_new">
+    <a href="/employees/new" class="btn btn-info">Add New</a>
+  </div>
+</div>

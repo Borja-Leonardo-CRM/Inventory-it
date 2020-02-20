@@ -40,7 +40,7 @@ const employees = [
     department: "CEO",
     equipmentsId: []
   }
-];
+].map((e, i) => ({ ...e, identity: i }));
 
 Employee.create(employees, err => {
   if (err) {
@@ -52,7 +52,6 @@ Employee.create(employees, err => {
 
 const equipments = [
   {
-    reference: "210",
     name: "Monitor 20'",
     model: "DELL",
     stock: 50,
@@ -60,7 +59,6 @@ const equipments = [
       "https://www.amazon.es/gp/browse.html?node=937994031&ref_=nav_em_T1_0_4_13_3__des"
   },
   {
-    reference: "120",
     name: "Keyboard'",
     model: "DELL",
     stock: 50,
@@ -68,7 +66,6 @@ const equipments = [
       "https://www.amazon.es/gp/browse.html?node=937994031&ref_=nav_em_T1_0_4_13_3__des"
   },
   {
-    reference: "230",
     name: "Mouse'",
     model: "DELL",
     stock: 50,
@@ -76,7 +73,6 @@ const equipments = [
       "https://www.amazon.es/gp/browse.html?node=937994031&ref_=nav_em_T1_0_4_13_3__des"
   },
   {
-    reference: "56",
     name: "Phone terminal",
     model: "CISCO",
     stock: 50,
@@ -84,14 +80,13 @@ const equipments = [
       "https://www.amazon.es/gp/browse.html?node=937994031&ref_=nav_em_T1_0_4_13_3__des"
   },
   {
-    reference: "65AB",
     name: "Headphones",
     model: "Jabra",
     stock: 50,
     url:
       "https://www.amazon.es/gp/browse.html?node=937994031&ref_=nav_em_T1_0_4_13_3__des"
   }
-];
+].map((e, i) => ({ ...e, reference: i }));
 
 Equipments.create(equipments, err => {
   if (err) {
