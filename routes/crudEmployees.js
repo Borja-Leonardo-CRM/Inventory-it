@@ -16,6 +16,10 @@ router.get("/", async (req, res, next) => {
 
 /* GET form to add a employees */
 router.get("/new", (req, res, next) => {
+  const identity = 5;
+  if (identity > 5) {
+    map((e, i) => ({ ...e, identity: i + 1 }));
+  }
   res.render("employees/newEmployee");
 });
 
@@ -44,11 +48,36 @@ router.get("/:id", async (req, res, next) => {
   try {
     const { id } = req.params;
     const employees = await Employees.findById(id);
-    res.render("employees/indexEmployee", {
+    res.render("employees/editEmployee", {
       employees
     });
   } catch (error) {
     console.log(`Employees.js - Error finding employee by id ${error}`);
+  }
+});
+
+/* POST delete a employee according to its id */
+router.post("/:id/delete", async (req, res, next) => {
+  try {
+    const { id } = req.params;
+    const employee = await Employees.findByIdAndRemove(id);
+    console.log(`Employees.js - Employees deleted ${employee}`);
+    res.redirect("/employee");
+  } catch (error) {
+    console.log(`Employees.js - Error deleting employee by id ${error}`);
+  }
+});
+
+/* GET edit a employee according to its id */
+router.get("/:id/edit", async (req, res, next) => {
+  try {
+    const { id } = req.params;
+    const employee = await Employees.findById(id);
+    res.render("employee/editEmployee", {
+      employee
+    });
+  } catch (error) {
+    console.log(`Employees.js - Error editing employee by id ${error}`);
   }
 });
 
