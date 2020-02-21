@@ -16,7 +16,64 @@ router.get("/", async (req, res, next) => {
   }
 });
 
-/* GET find a employee according to its id */
+/* ADD NEW EQUIPMETS */
+
+router.get("/add", async (req, res, next) => {
+  return res.render("equipments/newEquipment");
+});
+
+router.post("/add", async (req, res, next) => {
+  const { reference, name, model, stock, url } = req.body;
+  const newEquip = await Equipments.create({
+    reference,
+    name,
+    model,
+    stock,
+    url
+  });
+  console.log("New Equipment => " + newEquip);
+  try {
+    res.redirect("/equipments");
+  } catch {
+    return res.render("equipments/newEquipment");
+  }
+});
+
+/* GET find a equipments according to its id and EDIT*/
+router.get("/:id/edit", async (req, res, next) => {
+  try {
+    const { id } = req.params;
+    const equipments = await Equipments.findById(id);
+    res.render("equipments/editEquipment", {
+      equipments
+    });
+    console.log(req.params); // ELIMINAR <----------------------- OJO!
+  } catch (error) {
+    console.log(`"Equipments".js - Error finding equipments by id ${error}`);
+  }
+});
+
+/* POST Edit equipmets */
+
+router.post("/:id/edit", async (req, res, next) => {
+  const { id } = req.params;
+  const { reference, name, model, stock, url } = req.body;
+  console.log(req.body);
+  await Equipments.update({
+    reference,
+    name,
+    model,
+    stock,
+    url
+  });
+  try {
+    res.redirect("/equipments/" + id);
+  } catch {
+    next();
+  }
+});
+
+/* GET find a equipments according to its id */
 router.get("/:id", async (req, res, next) => {
   try {
     const { id } = req.params;
