@@ -1,12 +1,12 @@
 const mongoose = require("mongoose");
 
-const schemaEquipements = new mongoose.Schema({
-  reference: String,
+const schemaEquipments = new mongoose.Schema({
+  reference: Number,
   name: String,
   model: String,
   stock: Number,
   url: String
 });
 
-const model = mongoose.model("equipement", schemaEquipements);
+const model = mongoose.model("Equipment", schemaEquipments);
 module.exports = model;

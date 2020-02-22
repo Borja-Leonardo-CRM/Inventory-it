@@ -4,7 +4,7 @@ body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif; }
 
 a {
-  color: #00B7FF; }
+  color: #00b7ff; }
 
 #form {
   margin: 30px auto;
@@ -37,20 +37,27 @@ a {
   padding: 8px 16px;
   text-decoration: none;
   text-transform: uppercase;
-  transition: .3s ease background;
+  transition: 0.3s ease background;
   width: 100%; }
 
 #form button:hover {
   background: #fff;
   color: #43a3e6;
-  transition: .3s ease background; }
+  transition: 0.3s ease background; }
 
 .error-message {
-  background: #F02B63;
+  background: #f02b63;
   box-sizing: border-box;
   color: #fff;
   margin: 20px auto;
   padding: 20px;
   width: 100%; }
+
+.add_new {
+  flex-direction: row;
+  text-align: end; }
+
+td a {
+  display: block; }
 
 /*# sourceMappingURL=style.css.map */
