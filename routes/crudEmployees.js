@@ -2,6 +2,9 @@ const express = require("express");
 const router = express.Router();
 const Employees = require("../models/Employees");
 
+const assignEquipments = require("./routes/assignFuctions");
+app.use("/assign/:id", assignEquipments);
+
 // CRUD -> (R) Retrieve
 router.get("/", async (req, res, next) => {
   try {
