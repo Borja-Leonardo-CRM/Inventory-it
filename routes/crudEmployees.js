@@ -72,9 +72,11 @@ router.get("/:id/edit", async (req, res, next) => {
 router.get("/:id", async (req, res, next) => {
   try {
     const { id } = req.params;
+    
     const employee = await Employees.findById(id);
     res.render("employees/editEmployee", {
       employee
+
     });
   } catch (error) {
     console.log(`Employees.js - Error finding employee by id ${error}`);
