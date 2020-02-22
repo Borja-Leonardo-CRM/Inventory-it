@@ -8,12 +8,14 @@ a {
   color: #00b7ff;
 }
 
-#form {
+#form,
+#form-employees {
   margin: 30px auto;
   width: 380px;
 }
 
-#form label {
+#form,
+#form-employees label {
   color: #666;
   display: inline-block;
   margin-bottom: 10px;
@@ -22,7 +24,9 @@ a {
 }
 
 #form input,
-#form button {
+#form button,
+#form-employees input,
+#form-employees button {
   box-sizing: border-box;
   font-size: 14px;
   outline: 0;
@@ -31,7 +35,8 @@ a {
   margin-bottom: 20px;
 }
 
-#form button {
+#form button,
+#form-employees button {
   background: #43a3e6;
   border: 1px solid #43a3e6;
   border-radius: 4px;
@@ -46,7 +51,8 @@ a {
   width: 100%;
 }
 
-#form button:hover {
+#form button:hover,
+#form-employees:hover {
   background: #fff;
   color: #43a3e6;
   transition: 0.3s ease background;
