@@ -43,19 +43,6 @@ router.post("/new", async (req, res, next) => {
   }
 });
 
-/* GET find a employee according to its id */
-router.get("/:id", async (req, res, next) => {
-  try {
-    const { id } = req.params;
-    const employees = await Employees.findById(id);
-    res.render("employees/editEmployee", {
-      employees
-    });
-  } catch (error) {
-    console.log(`Employees.js - Error finding employee by id ${error}`);
-  }
-});
-
 /* POST delete a employee according to its id */
 router.post("/:id/delete", async (req, res, next) => {
   try {
@@ -78,6 +65,19 @@ router.get("/:id/edit", async (req, res, next) => {
     });
   } catch (error) {
     console.log(`Employees.js - Error editing employee by id ${error}`);
+  }
+});
+
+/* GET find a employee according to its id */
+router.get("/:id", async (req, res, next) => {
+  try {
+    const { id } = req.params;
+    const employee = await Employees.findById(id);
+    res.render("employees/editEmployee", {
+      employee
+    });
+  } catch (error) {
+    console.log(`Employees.js - Error finding employee by id ${error}`);
   }
 });
 

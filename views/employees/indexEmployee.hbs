@@ -11,8 +11,7 @@
     <tbody>
       {{#each employees}}
       <tr>
-        <td>{{ identity }}<button type="button" class="btn btn-primary btn-sm"><a
-              href="/employees/edit">Edit</a></button></td>
+        <td><a href="/employees/{{_id}}">{{ identity }}</a></td>
         <td>{{ name }}</td>
         <td>{{ department }}</td>
         <td>{{ equipmentsId }}</td>
