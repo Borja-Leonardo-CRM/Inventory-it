@@ -16,6 +16,17 @@ router.get("/", async (req, res, next) => {
   }
 });
 
+// REMOVE EQUIPMENTS
+router.get("/:id/remove", async (req, res, next) => {
+  const id = req.params.id;
+  try {
+    await Equipments.findByIdAndRemove(id);
+    return res.redirect("/equipments");
+  } catch {
+    next();
+  }
+});
+
 /* ADD NEW EQUIPMETS */
 
 router.get("/add", async (req, res, next) => {
