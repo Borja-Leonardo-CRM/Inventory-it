@@ -1,12 +1,12 @@
 const express = require("express");
 const router = express.Router();
-const Employees = require("../models/employees");
+const Employees = require("../models/Employees");
 
 // CRUD -> (R) Retrieve
 router.get("/", async (req, res, next) => {
   try {
     const employees = await Employees.find();
-    res.render("employees/showEmployee", {
+    res.render("employees/indexEmployee", {
       employees
     });
   } catch (error) {
@@ -19,8 +19,8 @@ router.get("/:id", async (req, res, next) => {
   try {
     const { id } = req.params;
     const employees = await Employees.findById(id);
-    res.render("employees/showEmployee", {
-      celebrity
+    res.render("employees/indexEmployee", {
+      employees
     });
   } catch (error) {
     console.log(`Employees.js - Error finding employee by id ${error}`);
