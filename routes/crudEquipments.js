@@ -78,7 +78,7 @@ router.post("/:id/edit", async (req, res, next) => {
     url
   });
   try {
-    res.redirect("/equipments/" + id);
+    return res.redirect("/equipments/" + id);
   } catch {
     next();
   }
