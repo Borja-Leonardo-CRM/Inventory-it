@@ -1,16 +1,23 @@
-<div class="container" style="margin-top: 70px; text-align:center;">
-  <form action="/employees/new" method="POST" id="form">
-    <h2 style="margin-bottom: 50px">ADD EMPLOYEE</h2>
+<div class="container" style="margin-top: 70px;">
+  <h2>NEW EMPLOYEE</h2>
 
-    <label for="username">Name</label>
-    <input type="text" name="name" required>
-
-    <label for="department">Department</label>
-    <input type="text" name="department" required>
-
-    {{#if errorMessage }}
-    <div class="error-message">{{ errorMessage }}</div>
-    {{/if}}
-    <button>Add</button>
+  <form id="form-employees" method="POST">
+    <div>
+      <label for="refence">IDENTITY</label><br>
+      <input type="number" name="identity" value="">
+    </div>
+    <div>
+      <label for="name">NAME</label><br>
+      <input type="text" name="name" value="">
+    </div>
+    <div>
+      <label for="model">DEPARTMENT</label><br>
+      <input type="text" name="department" value="">
+    </div>
+    <div>
+      <label for="number">EQUIPEMTS-ID</label><br>
+      <input type="number" name="equipmentsId" value="">
+    </div>
+    <button>AÑADIR</button>
   </form>
 </div>

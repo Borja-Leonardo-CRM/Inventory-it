@@ -1,0 +1,26 @@
+<div class="container" style="margin-top: 70px; text-align: center">
+  <div>
+    <h2>Employee: {{employee.name}}</h2>
+  </div>
+  <form id="form-employees">
+    <div>
+      <label for="refence">IDENTITY</label><br>
+      <input type="number" name="reference" value="{{employee.identity}}" disabled="disabled">
+    </div>
+    <div>
+      <label for="name">NAME</label><br>
+      <input type="text" name="name" value="{{employee.name}}" disabled="disabled">
+    </div>
+    <div>
+      <label for="model">DEPARTMENT</label><br>
+      <input type="text" name="model" value="{{employee.department}}" disabled="disabled">
+    </div>
+    <div>
+      <label for="number">EQUIPMENT</label><br>
+      <input type="number" name="number" value="{{employee.equipmentsId}}" disabled="disabled">
+    </div>
+  </form>
+  <a href=" /employees/{{employee._id}}/edit">
+    <button>EDITAR</button>
+  </a>
+</div>
