@@ -8,15 +8,29 @@
                 </tr>
             </thead>
             <tbody>
-                {{#each employee}}
+                {{#each employee.equipmentsId}}
                 <tr>
-                    <td>{{ this.equipmentsId}}</td>
+                    <td>{{ this}}</td>
                 </tr>
                 {{/each}}
             </tbody>
         </table>
     </div>
     <div class="current-equipments">
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>AVAIBLE EQUIPMETS</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each equipment}}
+                <tr>
+                    <td>{{this.reference}}</td>
+                </tr>
+                {{/each}}
+            </tbody>
+        </table>
 
     </div>
 </div>

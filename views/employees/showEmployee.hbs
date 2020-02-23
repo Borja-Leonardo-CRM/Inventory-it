@@ -17,7 +17,9 @@
     </div>
     <div>
       <label for="number">EQUIPMENT</label><br>
-      <input type="number" name="equipmentsId" value="{{employee.equipmentsId}}" disabled="disabled">
+      {{#each employee.equipmentsId}}
+      <input type="number" name="equipmentsId" value="{{this}}" disabled="disabled">
+      {{/each}}
     </div>
   </form>
   <a href=" /employees/{{employee._id}}/edit">
