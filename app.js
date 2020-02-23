@@ -87,13 +87,13 @@ app.use("/", index);
 const passportRoutes = require("./routes/passportRoutes");
 app.use("/", passportRoutes);
 
-const assignItem = require("./routes/assignRouter");
-app.use("/assign", assignItem);
-
 const crudEmployees = require("./routes/crudEmployees");
 app.use("/employees", crudEmployees);
 
 const crudEquipments = require("./routes/crudEquipments");
 app.use("/equipments", crudEquipments);
+
+const assignItem = require("./routes/assignRouter");
+app.use("/assign", assignItem);
 
 module.exports = app;

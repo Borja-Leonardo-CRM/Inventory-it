@@ -3,7 +3,7 @@ const router = express.Router();
 const Employees = require("../models/Employees");
 
 // const assignItem = require("./assignRouter");
-// router.use("/:id/assign", assignItem);
+// router.use("/assign", assignItem);
 
 // CRUD -> (R) Retrieve
 router.get("/", async (req, res, next) => {

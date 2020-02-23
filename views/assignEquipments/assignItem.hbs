@@ -1,5 +1,22 @@
 <h2>ASIGNAR ITEM A {{employee.name}}</h2>
+<div id="assign-container">
+    <div class="current-equipments">
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>CURRENT EQUIPMENT</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each employee}}
+                <tr>
+                    <td>{{ this.equipmentsId}}</td>
+                </tr>
+                {{/each}}
+            </tbody>
+        </table>
+    </div>
+    <div class="current-equipments">
 
-<div id="current-equipments">
-
+    </div>
 </div>
