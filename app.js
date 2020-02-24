@@ -3,13 +3,13 @@ require("dotenv").config();
 const bodyParser = require("body-parser");
 const cookieParser = require("cookie-parser");
 const express = require("express");
+const hbs = require("hbs");
 const mongoose = require("mongoose");
 const logger = require("morgan");
 const path = require("path");
-const sassMiddleware = require("node-sass-middleware");
-const hbs = require("hbs");
 const session = require("express-session");
 const MongoStore = require("connect-mongo")(session);
+const sassMiddleware = require("node-sass-middleware");
 
 mongoose
   .connect(process.env.DBURL, {
@@ -33,7 +33,7 @@ const debug = require("debug")(
 
 const app = express();
 
-//  Setup
+// Middleware setup
 app.use(logger("dev"));
 app.use(bodyParser.json());
 app.use(
@@ -55,17 +55,8 @@ app.use(
   })
 );
 
-app.use(
-  sassMiddleware({
-    src: path.join(__dirname, "public"),
-    dest: path.join(__dirname, "public"),
-    sourceMap: true
-  })
-);
-
-// app.use(flash());
-
 require("./passport")(app);
+// app.use(flash());
 
 // Express View engine setup
 app.use(
@@ -80,10 +71,9 @@ app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "hbs");
 app.use(express.static(path.join(__dirname, "public")));
 
-
 // Routes middleware goes here
-const index = require("./routes/index");
-app.use("/", index);
+const indexRouter = require("./routes/indexRouter");
+app.use("/", indexRouter);
 
 const passportRoutes = require("./routes/passportRoutes");
 app.use("/", passportRoutes);
