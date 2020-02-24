@@ -18,11 +18,11 @@ passportRouter.post("/signup", isLoggedOut(), async (req, res, next) => {
       username,
       password: hashPassword(password)
     });
-    req.flash("error", `Created user ${username}`);
+    //req.flash("error", `Created user ${username}`);
     return res.redirect("/");
   } else {
-    req.flash("error", "User already exists with this username");
-    return res.redirect("/passport/signup");
+    //req.flash("error", "User already exists with this username");
+    return res.redirect("passport/signup");
   }
 });
 
@@ -34,7 +34,7 @@ passportRouter.get("/login", isLoggedOut(), (req, res, next) => {
 passportRouter.post(
   "/login",
   passport.authenticate("local", {
-    successRedirect: "/",
+    successRedirect: "/employees",
     failureRedirect: "/login"
   })
 );

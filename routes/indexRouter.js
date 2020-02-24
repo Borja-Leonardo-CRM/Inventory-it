@@ -3,11 +3,11 @@ const router = express.Router();
 const { isLoggedIn } = require("../lib/isLoggedMiddleware");
 
 /* GET home page */
-router.get("/", (req, res, next) => {
-  res.render("index");
-});
+// router.get("/", (req, res, next) => {
+//   res.render("index");
+// });
 
-router.get("/private", isLoggedIn(), (req, res, next) => {
-  res.render("private");
+router.get("/", isLoggedIn(), (req, res, next) => {
+  res.render("login");
 });
 module.exports = router;
