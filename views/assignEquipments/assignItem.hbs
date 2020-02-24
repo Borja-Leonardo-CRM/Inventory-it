@@ -1,6 +1,7 @@
 <h2>ASIGNAR ITEM A {{employee.name}}</h2>
 <div id="assign-container">
     <div class="current-equipments">
+        <button id="refresh-item" onclick="refresh()" name="{{employee.id}}">Refresh</button>
         <table class="table table-hover">
             <thead>
                 <tr>
@@ -26,7 +27,16 @@
             <tbody>
                 {{#each equipment}}
                 <tr>
-                    <td>{{this.reference}}</td>
+                    <td>
+                        <div>
+                            <form method="POST">
+                                <div id="number" name="reference">{{this.reference}}</div>
+                                {{!-- <input type="number" name="reference" value="{{this.reference}}"> --}}
+                                <button id="assign-item" onclick="assign()" style="background-color: green;"
+                                    name="{{this.reference}}">ASIGNAR</button>
+                            </form>
+                        </div>
+                    </td>
                 </tr>
                 {{/each}}
             </tbody>
