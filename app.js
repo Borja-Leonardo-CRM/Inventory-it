@@ -9,6 +9,7 @@ const logger = require("morgan");
 const path = require("path");
 const session = require("express-session");
 const MongoStore = require("connect-mongo")(session);
+const flash = require("connect-flash");
 const sassMiddleware = require("node-sass-middleware");
 
 mongoose
@@ -33,6 +34,9 @@ const debug = require("debug")(
 
 const app = express();
 
+// Flash messages
+app.use(flash());
+
 // Middleware setup
 app.use(logger("dev"));
 app.use(bodyParser.json());
@@ -56,7 +60,6 @@ app.use(
 );
 
 require("./passport")(app);
-// app.use(flash());
 
 // Express View engine setup
 app.use(

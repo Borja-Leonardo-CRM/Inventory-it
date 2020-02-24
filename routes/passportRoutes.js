@@ -7,6 +7,10 @@ const { isLoggedIn, isLoggedOut } = require("../lib/isLoggedMiddleware");
 
 // Signin route
 passportRouter.get("/signup", isLoggedOut(), (req, res, next) => {
+  req.flash(
+    "success",
+    "Successfuly Signed Up! Nice to meet you " + req.body.username
+  );
   res.render("passport/signup");
 });
 
@@ -18,16 +22,17 @@ passportRouter.post("/signup", isLoggedOut(), async (req, res, next) => {
       username,
       password: hashPassword(password)
     });
-    //req.flash("error", `Created user ${username}`);
+    req.flash("error", `Created user ${username}`);
     return res.redirect("/");
   } else {
-    //req.flash("error", "User already exists with this username");
+    req.flash("error", "User already exists with this username");
     return res.redirect("passport/signup");
   }
 });
 
 // Login route
 passportRouter.get("/login", isLoggedOut(), (req, res, next) => {
+  req.flash("success", "Welcome back!" + req.body.username);
   res.render("passport/login");
 });
 
@@ -40,6 +45,7 @@ passportRouter.post(
 );
 
 passportRouter.get("/logout", isLoggedIn(), async (req, res, next) => {
+  req.flash("success", "Bye!" + req.body.username);
   req.logout();
   res.redirect("/");
 });
