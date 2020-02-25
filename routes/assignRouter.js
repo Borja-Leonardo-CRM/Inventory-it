@@ -11,8 +11,7 @@ router.get("/:id/assign", async (req, res, next) => {
     const { id } = req.params;
     const employee = await Employees.findById(id);
     const equipment = await Equipments.find();
-    console.log("blablabla");
-    console.log(employee);
+    console.log("Recibido!!!!!");
     res.render("assignEquipments/assignItem", {
       employee,
       equipment
@@ -29,7 +28,7 @@ router.post("/:id/assign", async (req, res, next) => {
   const id = e;
   const reference = item;
   // const employee = await Employees.findById(id);
-  await Employees.updateOne(
+  const newAssign = await Employees.updateOne(
     {
       _id: id
     },
@@ -39,11 +38,13 @@ router.post("/:id/assign", async (req, res, next) => {
       }
     }
   );
-  try {
-    return console.log(`${equipmentsId} assigned `);
-  } catch {
-    next();
-  }
+  // try {
+  //   console.log(`${newAssign} assigned `);
+  //   return res.redirect(`/assign/${id}/assign`);
+  // } catch {
+  //   console.log(`${newAssign} assigned but error`);
+  //   next();
+  // }
 });
 
 module.exports = router;

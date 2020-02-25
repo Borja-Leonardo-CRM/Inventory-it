@@ -10,16 +10,9 @@ function refresh() {
   e = document.getElementById("refresh-item").name;
   console.log(e);
   axios
-    .get(`http://localhost:3000/assign/${e}/assign`)
+    .get(`http://localhost:3000/assign/${e}/assign`, OK)
     .then(response => console.log("Ahí va"));
 }
-
-// document.addEventListener("click", e) = e => {
-//  e.getElementById("refresh-item").name
-//   const id = e;
-//   console.log("e");
-//   axios.post("http://localhost:3000/assign/id/assign");
-// };
 
 // When the WALL-E button is clicked
 function assign() {
@@ -35,7 +28,3 @@ function assign() {
 function id() {
   e = document.getElementById("refresh-item").name;
 }
-//   getElementById("refresh-item").name;
-
-// debugger;
-// console.log(item);

@@ -42,7 +42,6 @@ router.post("/add", async (req, res, next) => {
     stock,
     url
   });
-  console.log("New Equipment => " + newEquip);
   try {
     res.redirect("/equipments");
   } catch {
