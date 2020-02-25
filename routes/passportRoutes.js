@@ -26,7 +26,7 @@ passportRouter.post("/signup", isLoggedOut(), async (req, res, next) => {
     return res.redirect("/");
   } else {
     req.flash("error", "User already exists with this username");
-    return res.redirect("passport/signup");
+    return res.redirect("/signup");
   }
 });
 
