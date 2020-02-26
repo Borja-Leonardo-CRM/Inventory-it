@@ -2,7 +2,7 @@
 <div id="assign-container">
     <div class="current-equipments">
         <button id="refresh-item" onclick="refresh()" name="{{employee.id}}">Refresh</button>
-        <table class="table table-hover">
+        <table class="table table-hover" id="table-assign-1">
             <thead>
                 <tr>
                     <th>CURRENT EQUIPMENT</th>
@@ -14,6 +14,16 @@
                     <td>{{ this}}</td>
                 </tr>
                 {{/each}}
+            </tbody>
+        </table>
+        <table class="table table-hover" id="table-assign-2">
+            <thead>
+                <tr>
+                    <th>CURRENT EQUIPMENT</th>
+                </tr>
+            </thead>
+            <tbody class="refresh-cells">
+
             </tbody>
         </table>
     </div>
