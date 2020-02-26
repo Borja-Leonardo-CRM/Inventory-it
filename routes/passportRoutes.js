@@ -4,13 +4,10 @@ const User = require("../models/User"); // Require user model
 const { hashPassword } = require("../lib/hashing");
 const passport = require("passport"); // Add passport
 const { isLoggedIn, isLoggedOut } = require("../lib/isLoggedMiddleware");
+const ensureLogin = require("connect-ensure-login");
 
-// Signin route
+// Signup route
 passportRouter.get("/signup", isLoggedOut(), (req, res, next) => {
-  req.flash(
-    "success",
-    "Successfuly Signed Up! Nice to meet you " + req.body.username
-  );
   res.render("passport/signup");
 });
 
@@ -22,8 +19,8 @@ passportRouter.post("/signup", isLoggedOut(), async (req, res, next) => {
       username,
       password: hashPassword(password)
     });
-    req.flash("error", `Created user ${username}`);
-    return res.redirect("/");
+    req.flash("success", `Created user ${username}`);
+    return res.redirect("/employees");
   } else {
     req.flash("error", "User already exists with this username");
     return res.redirect("/signup");
@@ -32,7 +29,6 @@ passportRouter.post("/signup", isLoggedOut(), async (req, res, next) => {
 
 // Login route
 passportRouter.get("/login", isLoggedOut(), (req, res, next) => {
-  req.flash("success", "Welcome back!" + req.body.username);
   res.render("passport/login");
 });
 
@@ -40,13 +36,20 @@ passportRouter.post(
   "/login",
   passport.authenticate("local", {
     successRedirect: "/employees",
-    failureRedirect: "/login"
+    failureRedirect: "/signup",
+    failureFlash: true,
+    passReqToCallback: true
   })
 );
 
+passportRouter.get("/", ensureLogin.ensureLoggedIn(), (req, res) => {
+  res.render("/employees", { users: req.users });
+});
+
+// Logout route
 passportRouter.get("/logout", isLoggedIn(), async (req, res, next) => {
-  req.flash("success", "Bye!" + req.body.username);
   req.logout();
+  req.flash("success", "Logged you out!");
   res.redirect("/");
 });
 
