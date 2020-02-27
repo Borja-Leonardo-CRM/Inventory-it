@@ -2,17 +2,27 @@ const express = require("express");
 const router = express.Router();
 const Equipments = require("../models/Equipments");
 
-console.log("hola");
-
-// CRUD -> (R) Retrieve
-router.get("/", async (req, res, next) => {
-  try {
-    const equipments = await Equipments.find();
-    res.render("equipments/indexEquipment", {
-      equipments
+// INDEX - show all equipments
+router.get("/", function(req, res) {
+  if (req.query.search) {
+    const regex = new RegExp(escapeRegex(req.query.search), "gi");
+    // Get all the equipments from DB
+    Equipments.find({ name: regex }, function(err, allEquipments) {
+      if (err) {
+        console.log(err);
+      } else {
+        res.render("equipments/indexEquipment", { equipment: allEquipments });
+      }
     });
-  } catch (error) {
-    console.log(`Equipments.js - Error retrieving all equipments ${error}`);
+  } else {
+    // Get all the equipments from DB
+    Equipments.find({}, function(err, allEquipments) {
+      if (err) {
+        console.log(err);
+      } else {
+        res.render("equipments/indexEquipment", { equipment: allEquipments });
+      }
+    });
   }
 });
 
@@ -96,5 +106,9 @@ router.get("/:id", async (req, res, next) => {
     console.log(`"Equipments".js - Error finding equipments by id ${error}`);
   }
 });
+
+function escapeRegex(text) {
+  return text.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, "\\$&");
+}
 
 module.exports = router;

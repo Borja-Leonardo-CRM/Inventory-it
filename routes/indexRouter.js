@@ -8,6 +8,6 @@ const { isLoggedIn } = require("../lib/isLoggedMiddleware");
 // });
 
 router.get("/", isLoggedIn(), (req, res, next) => {
-  res.render("login");
+  res.render("index");
 });
 module.exports = router;

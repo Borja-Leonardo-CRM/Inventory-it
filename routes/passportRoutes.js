@@ -28,7 +28,7 @@ passportRouter.post("/signup", isLoggedOut(), async (req, res, next) => {
 });
 
 // Login route
-passportRouter.get("/login", isLoggedOut(), (req, res, next) => {
+passportRouter.get("/login", isLoggedOut("/"), (req, res, next) => {
   res.render("passport/login");
 });
 

@@ -2,15 +2,27 @@ const express = require("express");
 const router = express.Router();
 const Employees = require("../models/Employees");
 
-// CRUD -> (R) Retrieve
-router.get("/", async (req, res, next) => {
-  try {
-    const employees = await Employees.find();
-    res.render("employees/indexEmployee", {
-      employees
+// INDEX - show all employees
+router.get("/", function(req, res) {
+  if (req.query.search) {
+    const regex = new RegExp(escapeRegex(req.query.search), "gi");
+    // Get all the employees from DB
+    Employees.find({ name: regex }, function(err, allEmployees) {
+      if (err) {
+        console.log(err);
+      } else {
+        res.render("employees/indexEmployee", { employees: allEmployees });
+      }
     });
-  } catch (error) {
-    console.log(`Employees.js - Error retrieving all employees ${error}`);
+  } else {
+    // Get all the employees from DB
+    Employees.find({}, function(err, allEmployees) {
+      if (err) {
+        console.log(err);
+      } else {
+        res.render("employees/indexEmployee", { employees: allEmployees });
+      }
+    });
   }
 });
 
@@ -89,7 +101,6 @@ router.post("/:id/edit", async (req, res, next) => {
 router.get("/:id", async (req, res, next) => {
   try {
     const { id } = req.params;
-
     const employee = await Employees.findById(id);
     res.render("employees/showEmployee", {
       employee
@@ -98,5 +109,9 @@ router.get("/:id", async (req, res, next) => {
     console.log(`Employees.js - Error finding employee by id ${error}`);
   }
 });
+
+function escapeRegex(text) {
+  return text.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, "\\$&");
+}
 
 module.exports = router;

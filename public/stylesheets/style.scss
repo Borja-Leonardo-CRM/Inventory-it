@@ -1,5 +1,5 @@
 body {
-  margin-top: 100px;
+  margin-top: 50px;
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
@@ -66,6 +66,37 @@ a {
   text-align: end;
 }
 
+.main-container {
+  margin-top: 10px;
+}
+
 td a {
   display: block;
+}
+
+input:required:invalid,
+input:focus:invalid {
+  -moz-box-shadow: none;
+}
+
+.tableFixHead {
+  overflow-y: auto;
+  height: 500px;
+}
+.tableFixHead thead th {
+  position: sticky;
+  top: 0;
+}
+
+/* Just common table stuff. Really. */
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+th,
+td {
+  padding: 8px 16px;
+}
+th {
+  background: #eee;
 }
