@@ -37,8 +37,6 @@ router.get("/new", (req, res, next) => {
 
 /* GET form to add a employees */
 router.post("/new", async (req, res, next) => {
-  console.log(req.body);
-
   try {
     const employee = new Employees({
       identity: req.body.identity,
@@ -46,8 +44,10 @@ router.post("/new", async (req, res, next) => {
       department: req.body.department,
       equipmentsId: req.body.equipmentsId
     });
+
     const obj = await Employees.create(employee);
     console.log(`Employees.js - Added new employee ${obj}`);
+    req.flash("success", "New employee added!");
     res.redirect("/employees/");
   } catch (error) {
     console.log(`Employees.js - Error adding new employee ${error}`);
@@ -75,7 +75,6 @@ router.get("/:id/edit", async (req, res, next) => {
     res.render("employees/editEmployee", {
       employee
     });
-    console.log(req.params); // ELIMINAR <----------------------- OJO!
   } catch (error) {
     console.log(`"Employees".js - Error finding employee by id ${error}`);
   }

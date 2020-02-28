@@ -20,7 +20,7 @@ passportRouter.post("/signup", isLoggedOut(), async (req, res, next) => {
       password: hashPassword(password)
     });
     req.flash("success", `Created user ${username}`);
-    return res.redirect("/employees");
+    return res.redirect("/login");
   } else {
     req.flash("error", "User already exists with this username");
     return res.redirect("/signup");
@@ -50,7 +50,7 @@ passportRouter.get("/", ensureLogin.ensureLoggedIn(), (req, res) => {
 passportRouter.get("/logout", isLoggedIn(), async (req, res, next) => {
   req.logout();
   req.flash("success", "Logged you out!");
-  res.redirect("/");
+  res.redirect("/login");
 });
 
 module.exports = passportRouter;

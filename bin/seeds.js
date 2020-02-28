@@ -550,39 +550,496 @@ Employee.create(employees, err => {
   mongoose.connection.close();
 });
 
+// SEED EQUIPMENT
+
 const equipments = [
   {
     name: "Monitor 20'",
     model: "DELL",
-    stock: 50,
-    url:
-      "https://www.amazon.es/gp/browse.html?node=937994031&ref_=nav_em_T1_0_4_13_3__des"
-  },
-  {
-    name: "Keyboard'",
-    model: "DELL",
-    stock: 50,
+    stock: [],
     url:
       "https://www.amazon.es/gp/browse.html?node=937994031&ref_=nav_em_T1_0_4_13_3__des"
   },
   {
     name: "Mouse'",
     model: "DELL",
-    stock: 50,
+    stock: [],
     url:
       "https://www.amazon.es/gp/browse.html?node=937994031&ref_=nav_em_T1_0_4_13_3__des"
   },
   {
     name: "Phone terminal",
     model: "CISCO",
-    stock: 50,
+    stock: [],
+    url:
+      "https://www.amazon.es/gp/browse.html?node=937994031&ref_=nav_em_T1_0_4_13_3__des"
+  },
+  {
+    name: "Phone terminal",
+    model: "CISCO",
+    stock: [],
+    url:
+      "https://www.amazon.es/gp/browse.html?node=937994031&ref_=nav_em_T1_0_4_13_3__des"
+  },
+  {
+    name: "Phone terminal",
+    model: "CISCO",
+    stock: [],
+    url:
+      "https://www.amazon.es/gp/browse.html?node=937994031&ref_=nav_em_T1_0_4_13_3__des"
+  },
+  {
+    name: "Phone terminal",
+    model: "CISCO",
+    stock: [],
+    url:
+      "https://www.amazon.es/gp/browse.html?node=937994031&ref_=nav_em_T1_0_4_13_3__des"
+  },
+  {
+    name: "Phone terminal",
+    model: "CISCO",
+    stock: [],
+    url:
+      "https://www.amazon.es/gp/browse.html?node=937994031&ref_=nav_em_T1_0_4_13_3__des"
+  },
+  {
+    name: "Phone terminal",
+    model: "CISCO",
+    stock: [],
+    url:
+      "https://www.amazon.es/gp/browse.html?node=937994031&ref_=nav_em_T1_0_4_13_3__des"
+  },
+  {
+    name: "Phone terminal",
+    model: "CISCO",
+    stock: [],
+    url:
+      "https://www.amazon.es/gp/browse.html?node=937994031&ref_=nav_em_T1_0_4_13_3__des"
+  },
+  {
+    name: "Phone terminal",
+    model: "CISCO",
+    stock: [],
     url:
       "https://www.amazon.es/gp/browse.html?node=937994031&ref_=nav_em_T1_0_4_13_3__des"
   },
   {
     name: "Headphones",
     model: "Jabra",
-    stock: 50,
+    stock: [],
+    url:
+      "https://www.amazon.es/gp/browse.html?node=937994031&ref_=nav_em_T1_0_4_13_3__des"
+  },
+  {
+    name: "Headphones",
+    model: "Jabra",
+    stock: [],
+    url:
+      "https://www.amazon.es/gp/browse.html?node=937994031&ref_=nav_em_T1_0_4_13_3__des"
+  },
+  {
+    name: "Headphones",
+    model: "Jabra",
+    stock: [],
+    url:
+      "https://www.amazon.es/gp/browse.html?node=937994031&ref_=nav_em_T1_0_4_13_3__des"
+  },
+  {
+    name: "Headphones",
+    model: "Jabra",
+    stock: [],
+    url:
+      "https://www.amazon.es/gp/browse.html?node=937994031&ref_=nav_em_T1_0_4_13_3__des"
+  },
+  {
+    name: "Headphones",
+    model: "Jabra",
+    stock: [],
+    url:
+      "https://www.amazon.es/gp/browse.html?node=937994031&ref_=nav_em_T1_0_4_13_3__des"
+  },
+  {
+    name: "Headphones",
+    model: "Jabra",
+    stock: [],
+    url:
+      "https://www.amazon.es/gp/browse.html?node=937994031&ref_=nav_em_T1_0_4_13_3__des"
+  },
+  {
+    name: "Headphones",
+    model: "Jabra",
+    stock: [],
+    url:
+      "https://www.amazon.es/gp/browse.html?node=937994031&ref_=nav_em_T1_0_4_13_3__des"
+  },
+  {
+    name: "Headphones",
+    model: "Jabra",
+    stock: [],
+    url:
+      "https://www.amazon.es/gp/browse.html?node=937994031&ref_=nav_em_T1_0_4_13_3__des"
+  },
+  {
+    name: "Headphones",
+    model: "Jabra",
+    stock: [],
+    url:
+      "https://www.amazon.es/gp/browse.html?node=937994031&ref_=nav_em_T1_0_4_13_3__des"
+  },
+  {
+    name: "Headphones",
+    model: "Jabra",
+    stock: [],
+    url:
+      "https://www.amazon.es/gp/browse.html?node=937994031&ref_=nav_em_T1_0_4_13_3__des"
+  },
+  {
+    name: "Headphones",
+    model: "Jabra",
+    stock: [],
+    url:
+      "https://www.amazon.es/gp/browse.html?node=937994031&ref_=nav_em_T1_0_4_13_3__des"
+  },
+  {
+    name: "Headphones",
+    model: "Jabra",
+    stock: [],
+    url:
+      "https://www.amazon.es/gp/browse.html?node=937994031&ref_=nav_em_T1_0_4_13_3__des"
+  },
+  {
+    name: "Headphones",
+    model: "Jabra",
+    stock: [],
+    url:
+      "https://www.amazon.es/gp/browse.html?node=937994031&ref_=nav_em_T1_0_4_13_3__des"
+  },
+  {
+    name: "Headphones",
+    model: "Jabra",
+    stock: [],
+    url:
+      "https://www.amazon.es/gp/browse.html?node=937994031&ref_=nav_em_T1_0_4_13_3__des"
+  },
+  {
+    name: "Headphones",
+    model: "Jabra",
+    stock: [],
+    url:
+      "https://www.amazon.es/gp/browse.html?node=937994031&ref_=nav_em_T1_0_4_13_3__des"
+  },
+  {
+    name: "Keyboard'",
+    model: "DELL",
+    stock: [],
+    url:
+      "https://www.amazon.es/gp/browse.html?node=937994031&ref_=nav_em_T1_0_4_13_3__des"
+  },
+  {
+    name: "Keyboard'",
+    model: "DELL",
+    stock: [],
+    url:
+      "https://www.amazon.es/gp/browse.html?node=937994031&ref_=nav_em_T1_0_4_13_3__des"
+  },
+  {
+    name: "Keyboard'",
+    model: "DELL",
+    stock: [],
+    url:
+      "https://www.amazon.es/gp/browse.html?node=937994031&ref_=nav_em_T1_0_4_13_3__des"
+  },
+  {
+    name: "Keyboard'",
+    model: "DELL",
+    stock: [],
+    url:
+      "https://www.amazon.es/gp/browse.html?node=937994031&ref_=nav_em_T1_0_4_13_3__des"
+  },
+  {
+    name: "Keyboard'",
+    model: "DELL",
+    stock: [],
+    url:
+      "https://www.amazon.es/gp/browse.html?node=937994031&ref_=nav_em_T1_0_4_13_3__des"
+  },
+  {
+    name: "Keyboard'",
+    model: "DELL",
+    stock: [],
+    url:
+      "https://www.amazon.es/gp/browse.html?node=937994031&ref_=nav_em_T1_0_4_13_3__des"
+  },
+  {
+    name: "Keyboard'",
+    model: "DELL",
+    stock: [],
+    url:
+      "https://www.amazon.es/gp/browse.html?node=937994031&ref_=nav_em_T1_0_4_13_3__des"
+  },
+  {
+    name: "Keyboard'",
+    model: "DELL",
+    stock: [],
+    url:
+      "https://www.amazon.es/gp/browse.html?node=937994031&ref_=nav_em_T1_0_4_13_3__des"
+  },
+  {
+    name: "Keyboard'",
+    model: "DELL",
+    stock: [],
+    url:
+      "https://www.amazon.es/gp/browse.html?node=937994031&ref_=nav_em_T1_0_4_13_3__des"
+  },
+  {
+    name: "Keyboard'",
+    model: "DELL",
+    stock: [],
+    url:
+      "https://www.amazon.es/gp/browse.html?node=937994031&ref_=nav_em_T1_0_4_13_3__des"
+  },
+  {
+    name: "Keyboard'",
+    model: "DELL",
+    stock: [],
+    url:
+      "https://www.amazon.es/gp/browse.html?node=937994031&ref_=nav_em_T1_0_4_13_3__des"
+  },
+  {
+    name: "Keyboard'",
+    model: "DELL",
+    stock: [],
+    url:
+      "https://www.amazon.es/gp/browse.html?node=937994031&ref_=nav_em_T1_0_4_13_3__des"
+  },
+  {
+    name: "Keyboard'",
+    model: "DELL",
+    stock: [],
+    url:
+      "https://www.amazon.es/gp/browse.html?node=937994031&ref_=nav_em_T1_0_4_13_3__des"
+  },
+  {
+    name: "Keyboard'",
+    model: "DELL",
+    stock: [],
+    url:
+      "https://www.amazon.es/gp/browse.html?node=937994031&ref_=nav_em_T1_0_4_13_3__des"
+  },
+  {
+    name: "Keyboard'",
+    model: "DELL",
+    stock: [],
+    url:
+      "https://www.amazon.es/gp/browse.html?node=937994031&ref_=nav_em_T1_0_4_13_3__des"
+  },
+  {
+    name: "Monitor 20'",
+    model: "DELL",
+    stock: [],
+    url:
+      "https://www.amazon.es/gp/browse.html?node=937994031&ref_=nav_em_T1_0_4_13_3__des"
+  },
+  {
+    name: "Monitor 20'",
+    model: "DELL",
+    stock: [],
+    url:
+      "https://www.amazon.es/gp/browse.html?node=937994031&ref_=nav_em_T1_0_4_13_3__des"
+  },
+  {
+    name: "Monitor 20'",
+    model: "DELL",
+    stock: [],
+    url:
+      "https://www.amazon.es/gp/browse.html?node=937994031&ref_=nav_em_T1_0_4_13_3__des"
+  },
+  {
+    name: "Monitor 20'",
+    model: "DELL",
+    stock: [],
+    url:
+      "https://www.amazon.es/gp/browse.html?node=937994031&ref_=nav_em_T1_0_4_13_3__des"
+  },
+  {
+    name: "Monitor 20'",
+    model: "DELL",
+    stock: [],
+    url:
+      "https://www.amazon.es/gp/browse.html?node=937994031&ref_=nav_em_T1_0_4_13_3__des"
+  },
+  {
+    name: "Monitor 20'",
+    model: "DELL",
+    stock: [],
+    url:
+      "https://www.amazon.es/gp/browse.html?node=937994031&ref_=nav_em_T1_0_4_13_3__des"
+  },
+  {
+    name: "Monitor 20'",
+    model: "DELL",
+    stock: [],
+    url:
+      "https://www.amazon.es/gp/browse.html?node=937994031&ref_=nav_em_T1_0_4_13_3__des"
+  },
+  {
+    name: "Monitor 20'",
+    model: "DELL",
+    stock: [],
+    url:
+      "https://www.amazon.es/gp/browse.html?node=937994031&ref_=nav_em_T1_0_4_13_3__des"
+  },
+  {
+    name: "Monitor 20'",
+    model: "DELL",
+    stock: [],
+    url:
+      "https://www.amazon.es/gp/browse.html?node=937994031&ref_=nav_em_T1_0_4_13_3__des"
+  },
+  {
+    name: "Monitor 20'",
+    model: "DELL",
+    stock: [],
+    url:
+      "https://www.amazon.es/gp/browse.html?node=937994031&ref_=nav_em_T1_0_4_13_3__des"
+  },
+  {
+    name: "Monitor 20'",
+    model: "DELL",
+    stock: [],
+    url:
+      "https://www.amazon.es/gp/browse.html?node=937994031&ref_=nav_em_T1_0_4_13_3__des"
+  },
+  {
+    name: "Monitor 20'",
+    model: "DELL",
+    stock: [],
+    url:
+      "https://www.amazon.es/gp/browse.html?node=937994031&ref_=nav_em_T1_0_4_13_3__des"
+  },
+  {
+    name: "Monitor 20'",
+    model: "DELL",
+    stock: [],
+    url:
+      "https://www.amazon.es/gp/browse.html?node=937994031&ref_=nav_em_T1_0_4_13_3__des"
+  },
+  {
+    name: "Monitor 20'",
+    model: "DELL",
+    stock: [],
+    url:
+      "https://www.amazon.es/gp/browse.html?node=937994031&ref_=nav_em_T1_0_4_13_3__des"
+  },
+  {
+    name: "Monitor 20'",
+    model: "DELL",
+    stock: [],
+    url:
+      "https://www.amazon.es/gp/browse.html?node=937994031&ref_=nav_em_T1_0_4_13_3__des"
+  },
+  {
+    name: "Mouse'",
+    model: "DELL",
+    stock: [],
+    url:
+      "https://www.amazon.es/gp/browse.html?node=937994031&ref_=nav_em_T1_0_4_13_3__des"
+  },
+  {
+    name: "Mouse'",
+    model: "DELL",
+    stock: [],
+    url:
+      "https://www.amazon.es/gp/browse.html?node=937994031&ref_=nav_em_T1_0_4_13_3__des"
+  },
+  {
+    name: "Mouse'",
+    model: "DELL",
+    stock: [],
+    url:
+      "https://www.amazon.es/gp/browse.html?node=937994031&ref_=nav_em_T1_0_4_13_3__des"
+  },
+  {
+    name: "Mouse'",
+    model: "DELL",
+    stock: [],
+    url:
+      "https://www.amazon.es/gp/browse.html?node=937994031&ref_=nav_em_T1_0_4_13_3__des"
+  },
+  {
+    name: "Mouse'",
+    model: "DELL",
+    stock: [],
+    url:
+      "https://www.amazon.es/gp/browse.html?node=937994031&ref_=nav_em_T1_0_4_13_3__des"
+  },
+  {
+    name: "Mouse'",
+    model: "DELL",
+    stock: [],
+    url:
+      "https://www.amazon.es/gp/browse.html?node=937994031&ref_=nav_em_T1_0_4_13_3__des"
+  },
+  {
+    name: "Mouse'",
+    model: "DELL",
+    stock: [],
+    url:
+      "https://www.amazon.es/gp/browse.html?node=937994031&ref_=nav_em_T1_0_4_13_3__des"
+  },
+  {
+    name: "Mouse'",
+    model: "DELL",
+    stock: [],
+    url:
+      "https://www.amazon.es/gp/browse.html?node=937994031&ref_=nav_em_T1_0_4_13_3__des"
+  },
+  {
+    name: "Mouse'",
+    model: "DELL",
+    stock: [],
+    url:
+      "https://www.amazon.es/gp/browse.html?node=937994031&ref_=nav_em_T1_0_4_13_3__des"
+  },
+  {
+    name: "Mouse'",
+    model: "DELL",
+    stock: [],
+    url:
+      "https://www.amazon.es/gp/browse.html?node=937994031&ref_=nav_em_T1_0_4_13_3__des"
+  },
+  {
+    name: "Mouse'",
+    model: "DELL",
+    stock: [],
+    url:
+      "https://www.amazon.es/gp/browse.html?node=937994031&ref_=nav_em_T1_0_4_13_3__des"
+  },
+  {
+    name: "Mouse'",
+    model: "DELL",
+    stock: [],
+    url:
+      "https://www.amazon.es/gp/browse.html?node=937994031&ref_=nav_em_T1_0_4_13_3__des"
+  },
+  {
+    name: "Mouse'",
+    model: "DELL",
+    stock: [],
+    url:
+      "https://www.amazon.es/gp/browse.html?node=937994031&ref_=nav_em_T1_0_4_13_3__des"
+  },
+  {
+    name: "Mouse'",
+    model: "DELL",
+    stock: [],
+    url:
+      "https://www.amazon.es/gp/browse.html?node=937994031&ref_=nav_em_T1_0_4_13_3__des"
+  },
+  {
+    name: "Mouse'",
+    model: "DELL",
+    stock: [],
     url:
       "https://www.amazon.es/gp/browse.html?node=937994031&ref_=nav_em_T1_0_4_13_3__des"
   }
