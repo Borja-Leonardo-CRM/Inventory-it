@@ -52,7 +52,6 @@ router.post("/add", async (req, res, next) => {
     stock,
     url
   });
-  console.log("New Equipment => " + newEquip);
   try {
     res.redirect("/equipments");
   } catch {
@@ -88,7 +87,7 @@ router.post("/:id/edit", async (req, res, next) => {
     url
   });
   try {
-    res.redirect("/equipments/" + id);
+    return res.redirect("/equipments/" + id);
   } catch {
     next();
   }

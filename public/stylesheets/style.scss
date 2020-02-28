@@ -74,6 +74,10 @@ td a {
   display: block;
 }
 
+
+#table-assign-2 {
+  display: none;
+
 input:required:invalid,
 input:focus:invalid {
   -moz-box-shadow: none;
@@ -99,4 +103,5 @@ td {
 }
 th {
   background: #eee;
+
 }

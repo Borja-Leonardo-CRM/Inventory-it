@@ -17,10 +17,16 @@
     </div>
     <div>
       <label for="number">EQUIPMENT</label><br>
-      <input type="number" name="number" value="{{employee.equipmentsId}}" disabled="disabled">
+      {{#each employee.equipmentsId}}
+      <input type="number" name="equipmentsId" value="{{this}}" disabled="disabled">
+      {{/each}}
     </div>
   </form>
   <a href=" /employees/{{employee._id}}/edit">
     <button>EDITAR</button>
   </a>
+  <div>
+    <a href=" /assign/{{employee._id}}/assign"> ASIGNAR RECURSO</a>
+
+  </div>
 </div>
