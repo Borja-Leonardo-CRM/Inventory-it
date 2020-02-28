@@ -1,0 +1,22 @@
+<div class="container" style="margin-top: 70px;">
+  <h2>Employee: {{employee.name}}</h2>
+  <form id="form-employees" method="POST">
+    <div>
+      <label for="refence">IDENTITY</label><br>
+      <input type="number" name="identity" value="{{employee.identity}}">
+    </div>
+    <div>
+      <label for="name">NAME</label><br>
+      <input type="text" name="name" value="{{employee.name}}">
+    </div>
+    <div>
+      <label for="model">DEPARTMENT</label><br>
+      <input type="text" name="department" value="{{employee.department}}">
+    </div>
+    <div>
+      <label for="number">EQUIPMENT</label><br>
+      <input type="number" name="equipmentsId" value="{{employee.equipmentId}}">
+    </div>
+    <button>GUARDAR</button>
+  </form>
+</div>
