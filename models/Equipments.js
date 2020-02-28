@@ -4,7 +4,7 @@ const schemaEquipments = new mongoose.Schema({
   reference: Number,
   name: String,
   model: String,
-  stock: Number,
+  stock: [],
   url: String
 });
 
