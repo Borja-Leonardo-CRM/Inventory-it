@@ -1,0 +1,59 @@
+<h2>ASIGNAR ITEM A {{employee.name}}</h2>
+<div id="assign-container">
+    <div class="current-equipments">
+        <button id="refresh-item" onclick="refresh()" name="{{employee.id}}">Refresh</button>
+        <table class="table table-hover" id="table-assign-1">
+            <thead>
+                <tr>
+                    <th>CURRENT EQUIPMENT</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each employee.equipmentsId}}
+                <tr>
+                    <td>{{ this}}</td>
+                </tr>
+                {{/each}}
+            </tbody>
+        </table>
+        <table class="table table-hover" id="table-assign-2">
+            <thead>
+                <tr>
+                    <th>CURRENT EQUIPMENT</th>
+                </tr>
+            </thead>
+            <tbody class="refresh-cells">
+
+            </tbody>
+        </table>
+    </div>
+    <div class="current-equipments">
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>AVAIBLE EQUIPMETS</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each equipment}}
+                <tr>
+                    <td>
+                        <div>
+                            <form method="POST">
+                                <div id="referenceId">{{this.reference}}</div>
+                                <div id="stock-{{this.reference}}"></div>
+                                {{!-- <input type="number" name="reference" value="{{this.reference}}"> --}}
+                                <button type="button" id="assign-item" onclick="assign()"
+                                    style="background-color: green;" name="{{this.reference}}">ASIGNAR</button>
+                                <button type="button" id="stock-item" onclick="stock()" style="background-color: grey;"
+                                    name="{{this.reference}}">Ver Stock</button>
+                            </form>
+                        </div>
+                    </td>
+                </tr>
+                {{/each}}
+            </tbody>
+        </table>
+
+    </div>
+</div>

@@ -2,6 +2,17 @@ const express = require("express");
 const router = express.Router();
 const Employees = require("../models/Employees");
 
+
+// const assignItem = require("./assignRouter");
+// router.use("/assign", assignItem);
+
+// CRUD -> (R) Retrieve
+//router.get("/", async (req, res, next) => {
+ // try {
+  //  const employees = await Employees.find();
+  //  res.render("employees/indexEmployee", {
+  //    employees
+
 // INDEX - show all employees
 router.get("/", function(req, res) {
   if (req.query.search) {
@@ -22,6 +33,7 @@ router.get("/", function(req, res) {
       } else {
         res.render("employees/indexEmployee", { employees: allEmployees });
       }
+
     });
   }
 });
