@@ -74,6 +74,7 @@ td a {
   display: block;
 }
 
+<<<<<<< HEAD
 #table-assign-1 {
   display: block;
 }
@@ -81,6 +82,8 @@ td a {
   display: none;
 }
 
+=======
+>>>>>>> 38bdf3f0ec95be23f287f989239463574c6dca5f
 input:required:invalid,
 input:focus:invalid {
   -moz-box-shadow: none;
@@ -106,4 +109,17 @@ td {
 }
 th {
   background: #eee;
+<<<<<<< HEAD
+=======
+}
+
+/* Display or no table Assign */
+
+#table-assign-1 {
+  display: block;
+}
+
+table-assign-2 {
+  display: none;
+>>>>>>> 38bdf3f0ec95be23f287f989239463574c6dca5f
 }
