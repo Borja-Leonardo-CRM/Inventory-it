@@ -1,25 +1,21 @@
 body {
   margin-top: 50px;
   padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-}
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif; }
 
 a {
-  color: #00b7ff;
-}
+  color: #00b7ff; }
 
 #form {
   margin: 30px auto;
-  width: 380px;
-}
+  width: 380px; }
 
 #form label {
   color: #666;
   display: inline-block;
   margin-bottom: 10px;
   text-align: center;
-  width: 100%;
-}
+  width: 100%; }
 
 #form input,
 #form button {
@@ -28,8 +24,7 @@ a {
   outline: 0;
   padding: 4px;
   width: 100%;
-  margin-bottom: 20px;
-}
+  margin-bottom: 20px; }
 
 #form button {
   background: #43a3e6;
@@ -43,14 +38,12 @@ a {
   text-decoration: none;
   text-transform: uppercase;
   transition: 0.3s ease background;
-  width: 100%;
-}
+  width: 100%; }
 
 #form button:hover {
   background: #fff;
   color: #43a3e6;
-  transition: 0.3s ease background;
-}
+  transition: 0.3s ease background; }
 
 .error-message {
   background: #f02b63;
@@ -58,59 +51,47 @@ a {
   color: #fff;
   margin: 20px auto;
   padding: 20px;
-  width: 100%;
-}
+  width: 100%; }
 
 .add_new {
   flex-direction: row;
-  text-align: end;
-}
+  text-align: end; }
 
 .main-container {
-  margin-top: 10px;
-}
+  margin-top: 10px; }
 
 td a {
-  display: block;
-}
+  display: block; }
 
 input:required:invalid,
 input:focus:invalid {
-  -moz-box-shadow: none;
-}
+  -moz-box-shadow: none; }
 
 .tableFixHead {
   overflow-y: auto;
-  height: 500px;
-}
+  height: 500px; }
 
 .tableFixHead thead th {
   position: sticky;
-  top: 0;
-}
+  top: 0; }
 
 /* Just common table stuff. Really. */
 table {
   border-collapse: collapse;
-  width: 100%;
-}
+  width: 100%; }
 
 th,
 td {
-  padding: 8px 16px;
-}
+  padding: 8px 16px; }
 
 th {
-  background: #eee;
-}
+  background: #eee; }
 
 /* Display or no table Assign */
 #table-assign-1 {
-  display: block;
-}
+  display: block; }
 
-#table-assign-2 {
-  display: none;
-}
+table-assign-2 {
+  display: none; }
 
 /*# sourceMappingURL=style.css.map */
