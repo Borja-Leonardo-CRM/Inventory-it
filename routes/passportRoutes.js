@@ -36,8 +36,9 @@ passportRouter.post(
   "/login",
   passport.authenticate("local", {
     successRedirect: "/employees",
-    failureRedirect: "/signup",
-    failureFlash: true,
+    successFlash: "Welcome back to the Inventory-IT",
+    failureRedirect: "/login",
+    failureFlash: "Invalid username or password",
     passReqToCallback: true
   })
 );
