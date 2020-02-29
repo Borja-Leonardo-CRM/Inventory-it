@@ -74,9 +74,12 @@ td a {
   display: block;
 }
 
-
+#table-assign-1 {
+  display: block;
+}
 #table-assign-2 {
   display: none;
+}
 
 input:required:invalid,
 input:focus:invalid {
@@ -103,5 +106,4 @@ td {
 }
 th {
   background: #eee;
-
 }

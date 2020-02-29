@@ -575,55 +575,6 @@ const equipments = [
       "https://www.amazon.es/gp/browse.html?node=937994031&ref_=nav_em_T1_0_4_13_3__des"
   },
   {
-    name: "Phone terminal",
-    model: "CISCO",
-    stock: [],
-    url:
-      "https://www.amazon.es/gp/browse.html?node=937994031&ref_=nav_em_T1_0_4_13_3__des"
-  },
-  {
-    name: "Phone terminal",
-    model: "CISCO",
-    stock: [],
-    url:
-      "https://www.amazon.es/gp/browse.html?node=937994031&ref_=nav_em_T1_0_4_13_3__des"
-  },
-  {
-    name: "Phone terminal",
-    model: "CISCO",
-    stock: [],
-    url:
-      "https://www.amazon.es/gp/browse.html?node=937994031&ref_=nav_em_T1_0_4_13_3__des"
-  },
-  {
-    name: "Phone terminal",
-    model: "CISCO",
-    stock: [],
-    url:
-      "https://www.amazon.es/gp/browse.html?node=937994031&ref_=nav_em_T1_0_4_13_3__des"
-  },
-  {
-    name: "Phone terminal",
-    model: "CISCO",
-    stock: [],
-    url:
-      "https://www.amazon.es/gp/browse.html?node=937994031&ref_=nav_em_T1_0_4_13_3__des"
-  },
-  {
-    name: "Phone terminal",
-    model: "CISCO",
-    stock: [],
-    url:
-      "https://www.amazon.es/gp/browse.html?node=937994031&ref_=nav_em_T1_0_4_13_3__des"
-  },
-  {
-    name: "Phone terminal",
-    model: "CISCO",
-    stock: [],
-    url:
-      "https://www.amazon.es/gp/browse.html?node=937994031&ref_=nav_em_T1_0_4_13_3__des"
-  },
-  {
     name: "Headphones",
     model: "Jabra",
     stock: [],

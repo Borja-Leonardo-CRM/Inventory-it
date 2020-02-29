@@ -63,6 +63,8 @@ a {
 td a {
   display: block; }
 
+#table-assign-1 {
+  display: block; }
 
 #table-assign-2 {
   display: none; }
@@ -90,6 +92,5 @@ td {
 
 th {
   background: #eee; }
-
 
 /*# sourceMappingURL=style.css.map */
