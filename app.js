@@ -138,4 +138,7 @@ app.use("/employees", crudEmployees);
 const crudEquipments = require("./routes/crudEquipments");
 app.use("/equipments", crudEquipments);
 
+const assignItem = require("./routes/assignRouter");
+app.use("/assign", assignItem);
+
 module.exports = app;

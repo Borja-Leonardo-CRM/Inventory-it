@@ -87,4 +87,11 @@ td {
 th {
   background: #eee; }
 
+/* Display or no table Assign */
+#table-assign-1 {
+  display: block; }
+
+table-assign-2 {
+  display: none; }
+
 /*# sourceMappingURL=style.css.map */
