@@ -101,6 +101,8 @@ th {
   background: #eee;
 }
 
+/* Page ASSIGN Styles*/
+
 /* Display or no table Assign */
 
 #table-assign-1 {
@@ -109,4 +111,13 @@ th {
 
 #table-assign-2 {
   display: none;
+}
+
+#assign-container {
+  display: flex;
+}
+
+.assign-container-child {
+  display: flex;
+  width: 50%;
 }
