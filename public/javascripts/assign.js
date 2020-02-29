@@ -44,7 +44,7 @@ function createCells(response) {
   let newContent = "";
   for (let i = 0; i < data.length; i++) {
     newContent += `<tr><td>${data[i]}</td></tr><button type="button" id="remove-item" onclick="remove()"
-    style="background-color: red;" name="${data[i]}">ASIGNAR</button>`;
+    style="background-color: red;" name="${data[i]}">ELIMINAR</button>`;
   }
   table.innerHTML = newContent;
 }

@@ -1,18 +1,16 @@
 body {
-  margin-top: 100px;
+  margin-top: 50px;
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif; }
 
 a {
   color: #00b7ff; }
 
-#form,
-#form-employees {
+#form {
   margin: 30px auto;
   width: 380px; }
 
-#form,
-#form-employees label {
+#form label {
   color: #666;
   display: inline-block;
   margin-bottom: 10px;
@@ -20,9 +18,7 @@ a {
   width: 100%; }
 
 #form input,
-#form button,
-#form-employees input,
-#form-employees button {
+#form button {
   box-sizing: border-box;
   font-size: 14px;
   outline: 0;
@@ -30,8 +26,7 @@ a {
   width: 100%;
   margin-bottom: 20px; }
 
-#form button,
-#form-employees button {
+#form button {
   background: #43a3e6;
   border: 1px solid #43a3e6;
   border-radius: 4px;
@@ -45,8 +40,7 @@ a {
   transition: 0.3s ease background;
   width: 100%; }
 
-#form button:hover,
-#form-employees:hover {
+#form button:hover {
   background: #fff;
   color: #43a3e6;
   transition: 0.3s ease background; }
@@ -63,10 +57,41 @@ a {
   flex-direction: row;
   text-align: end; }
 
+.main-container {
+  margin-top: 10px; }
+
 td a {
   display: block; }
 
-#table-assign-2 {
+input:required:invalid,
+input:focus:invalid {
+  -moz-box-shadow: none; }
+
+.tableFixHead {
+  overflow-y: auto;
+  height: 500px; }
+
+.tableFixHead thead th {
+  position: sticky;
+  top: 0; }
+
+/* Just common table stuff. Really. */
+table {
+  border-collapse: collapse;
+  width: 100%; }
+
+th,
+td {
+  padding: 8px 16px; }
+
+th {
+  background: #eee; }
+
+/* Display or no table Assign */
+#table-assign-1 {
+  display: block; }
+
+table-assign-2 {
   display: none; }
 
 /*# sourceMappingURL=style.css.map */

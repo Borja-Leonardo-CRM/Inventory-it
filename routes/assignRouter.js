@@ -127,7 +127,7 @@ function toNumber(strg) {
 // Stock Upgrade
 
 function subtraction(stock) {
-  x = stock[0]["stock"];
+  x = parseInt(stock[0]["stock"]);
   if (x > 0) {
     return x - 1;
   } else {
@@ -136,7 +136,7 @@ function subtraction(stock) {
 }
 
 function sum(stock) {
-  x = stock[0]["stock"];
+  x = parseInt(stock[0]["stock"]);
   return x + 1;
 }
 

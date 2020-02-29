@@ -1,4 +1,14 @@
-<div class="container">
+<div style="text-align: center; flex-direction:row">
+  <p>
+    <form id="form" action="/employees" method="GET">
+      <div class="input-group">
+        <input type="text" name="search" placeholder="Search employees..." class="form-control" required>
+        <input type="submit" value="search" class="btn btn-info" style="width: 60px; margin-left:5px">
+      </div>
+    </form>
+  </p>
+</div>
+<div class="tableFixHead">
   <table class="table table-hover">
     <thead>
       <tr>
@@ -19,7 +29,7 @@
       {{/each}}
     </tbody>
   </table>
-  <div class="add_new">
-    <a href="/employees/new" class="btn btn-info">Add New</a>
-  </div>
+</div>
+<div class="add_new">
+  <a href="/employees/new" class="btn btn-info">Add new</a>
 </div>
