@@ -198,6 +198,14 @@ th {
   100% {
     background-position: 0% 50%; } }
 
+/* Page EDIT Styles  */
+.box-elements input {
+  width: 100%;
+  padding: 0.8em 2em;
+  border-radius: 5px;
+  font-family: "Oxanium";
+  font-size: 1.2em; }
+
 /* Page ASSIGN Styles*/
 /* Display or no table Assign */
 #table-assign-1 {
