@@ -547,7 +547,7 @@ Employee.create(employees, err => {
     throw err;
   }
   console.log(`Created ${employees.length} employees`);
-  mongoose.connection.close();
+  // mongoose.connection.close();
 });
 
 // SEED EQUIPMENT
@@ -1050,5 +1050,5 @@ Equipments.create(equipments, err => {
     throw err;
   }
   console.log(`Created ${equipments.length} equipments`);
-  mongoose.connection.close();
+  // mongoose.connection.close();
 });
