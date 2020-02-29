@@ -2,15 +2,39 @@ const express = require("express");
 const router = express.Router();
 const Employees = require("../models/Employees");
 
+
+// const assignItem = require("./assignRouter");
+// router.use("/assign", assignItem);
+
 // CRUD -> (R) Retrieve
-router.get("/", async (req, res, next) => {
-  try {
-    const employees = await Employees.find();
-    res.render("employees/indexEmployee", {
-      employees
+//router.get("/", async (req, res, next) => {
+ // try {
+  //  const employees = await Employees.find();
+  //  res.render("employees/indexEmployee", {
+  //    employees
+
+// INDEX - show all employees
+router.get("/", function(req, res) {
+  if (req.query.search) {
+    const regex = new RegExp(escapeRegex(req.query.search), "gi");
+    // Get all the employees from DB
+    Employees.find({ name: regex }, function(err, allEmployees) {
+      if (err) {
+        console.log(err);
+      } else {
+        res.render("employees/indexEmployee", { employees: allEmployees });
+      }
     });
-  } catch (error) {
-    console.log(`Employees.js - Error retrieving all employees ${error}`);
+  } else {
+    // Get all the employees from DB
+    Employees.find({}, function(err, allEmployees) {
+      if (err) {
+        console.log(err);
+      } else {
+        res.render("employees/indexEmployee", { employees: allEmployees });
+      }
+
+    });
   }
 });
 
@@ -25,8 +49,6 @@ router.get("/new", (req, res, next) => {
 
 /* GET form to add a employees */
 router.post("/new", async (req, res, next) => {
-  console.log(req.body);
-
   try {
     const employee = new Employees({
       identity: req.body.identity,
@@ -34,8 +56,10 @@ router.post("/new", async (req, res, next) => {
       department: req.body.department,
       equipmentsId: req.body.equipmentsId
     });
+
     const obj = await Employees.create(employee);
     console.log(`Employees.js - Added new employee ${obj}`);
+    req.flash("success", "New employee added!");
     res.redirect("/employees/");
   } catch (error) {
     console.log(`Employees.js - Error adding new employee ${error}`);
@@ -63,7 +87,6 @@ router.get("/:id/edit", async (req, res, next) => {
     res.render("employees/editEmployee", {
       employee
     });
-    console.log(req.params); // ELIMINAR <----------------------- OJO!
   } catch (error) {
     console.log(`"Employees".js - Error finding employee by id ${error}`);
   }
@@ -89,7 +112,6 @@ router.post("/:id/edit", async (req, res, next) => {
 router.get("/:id", async (req, res, next) => {
   try {
     const { id } = req.params;
-
     const employee = await Employees.findById(id);
     res.render("employees/showEmployee", {
       employee
@@ -98,5 +120,9 @@ router.get("/:id", async (req, res, next) => {
     console.log(`Employees.js - Error finding employee by id ${error}`);
   }
 });
+
+function escapeRegex(text) {
+  return text.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, "\\$&");
+}
 
 module.exports = router;
