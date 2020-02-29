@@ -1,3 +1,4 @@
+require("dotenv").config();
 const mongoose = require("mongoose");
 
 const Employee = require("../models/Employees");
@@ -5,7 +6,7 @@ const Equipments = require("../models/Equipments");
 
 const DB_NAME = "invetory-db";
 
-mongoose.connect(`mongodb://localhost/${DB_NAME}`, {
+mongoose.connect(process.env.DBURL, {
   useCreateIndex: true,
   useNewUrlParser: true,
   useUnifiedTopology: true
