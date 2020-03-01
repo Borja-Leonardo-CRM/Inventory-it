@@ -1,6 +1,6 @@
-window.assignItems = axios.create({
-  baseURL: "http://localhost:3000/assign"
-});
+// window.assignItems = axios.create({
+//   baseURL: "http://localhost:3000/assign"
+// });
 
 let e;
 
@@ -32,7 +32,7 @@ function assign() {
   console.log(item);
   axios
     .post(`/assign/newItem`, { item, e })
-    .then(console.log("-------- -------------->"))
+    .then(refresh())
     .catch(error => console.log("Oh No! Error is: ", error));
 }
 
