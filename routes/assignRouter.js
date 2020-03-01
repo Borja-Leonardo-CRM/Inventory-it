@@ -26,91 +26,102 @@ router.get(
   }
 );
 
-// router.post("/newItem", async (req, res, next) => {
-//   const { item, e } = req.body;
-//   const id = e; // Id employee
-//   const reference = item;
-//   const referenceItem = toNumber(item);
-//   const dataReference = await Equipments.findOne({ reference: reference });
-//   const idItem = dataReference._id; // id of item
-//   let equipment;
-//   const employee = await Employees.findOneAndUpdate(
-//     {
-//       _id: id
-//     },
-//     {
-//       $push: {
-//         equipmentsId: dataReference
-//       }
-//     }
-//   );
-//   await Employees.findOne({ _id: id }).then(e => {
-//     equipment = e.equipmentsId;
-//     console.log("devulevo esto", employee);
-//   });
-//   res.json({ employee, equipment });
-// });
-
 router.post("/newItem", async (req, res, next) => {
   const { item, e } = req.body;
-  const id = e;
+  const id = e; // Id employee
+  const reference = item;
   const referenceItem = toNumber(item);
-  const stock = await Equipments.find({
-    reference: referenceItem
-  });
-
-  const stockUpdate = subtraction(stock);
-  console.log(stockUpdate);
-
-  // const employee = await Employees.findById(id);
-  await Employees.updateOne(
+  const dataReference = await Equipments.findOne({ reference: reference });
+  const dataStock = dataReference.stock - 1;
+  const idItem = dataReference._id; // id of item
+  let equipment;
+  const employee = await Employees.findOneAndUpdate(
     {
       _id: id
     },
     {
       $push: {
-        equipmentsId: referenceItem
+        equipmentsId: dataReference
       }
     }
   );
-  await Equipments.updateOne(
+  await Equipments.findOneAndUpdate(
     {
-      reference: referenceItem
+      reference: reference
     },
     {
-      stock: stockUpdate
+      stock: dataStock
     }
   );
+  // await Employees.findOne({ _id: id }).then(e => {
+  //   equipment = e.equipmentsId;
+  // });
   res.json({});
 });
 
+// router.post("/newItem", async (req, res, next) => {
+//   const { item, e } = req.body;
+//   const id = e;
+//   const referenceItem = toNumber(item);
+//   const stock = await Equipments.find({
+//     reference: referenceItem
+//   });
+
+//   const stockUpdate = subtraction(stock);
+//   // const employee = await Employees.findById(id);
+//   await Employees.updateOne(
+//     {
+//       _id: id
+//     },
+//     {
+//       $push: {
+//         equipmentsId: referenceItem
+//       }
+//     }
+//   );
+//   await Equipments.updateOne(
+//     {
+//       reference: referenceItem
+//     },
+//     {
+//       stock: stockUpdate
+//     }
+//   );
+//   //console.log(stockUpdate);
+//   res.json({ stock });
+// });
+
 router.post("/removeItem", async (req, res, next) => {
   const { item, e } = req.body;
-  const id = e;
+  const id = e; // Id employee
+  const idItem = item; // Id item
   const referenceItem = toNumber(item);
-  const stock = await Equipments.find({
-    reference: referenceItem
-  });
+  const dataReference = await Equipments.findOne({ _id: idItem });
+  const dataStock = dataReference.stock + 1;
+  // const stock = await Equipments.find({
+  //   reference: referenceItem
+  // });
 
-  const stockUpdate = sum(stock);
-  console.log(stockUpdate);
+  // const stockUpdate = sum(stock);
 
-  await Employees.updateOne(
+  await Employees.findOneAndUpdate(
     {
       _id: id
     },
     {
       $pull: {
-        equipmentsId: referenceItem
+        equipmentsId: {
+          _id: idItem
+        }
       }
     }
   ),
-    await Equipments.updateOne(
+    await Equipments.findOneAndUpdate(
       {
-        reference: referenceItem
+        _id: idItem
       },
       {
-        stock: stockUpdate
+        stock: dataStock
       }
     );
 

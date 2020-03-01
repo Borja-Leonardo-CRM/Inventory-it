@@ -1,4 +1,26 @@
-<div class="title-name">
+<ul>
+    <li>HOla</li>
+    {{#each employee.equipmentsId}}
+    <li>{{this.name}} - {{this.reference}} - {{this.stock}} <button type="button" id="{{employee.id}}"
+            onclick="remove()" style="background-color: red;" name="{{ this._id}}">ELIMINAR</button></li>
+    {{/each}}
+</ul>
+
+<div id="assign-container-axios">
+    <ul class="list-assigned">
+
+    </ul>
+</div>
+
+<div id="assign-container-axios">
+    <ul class="list-assign-do">
+
+    </ul>
+</div>
+
+<button type="button" id="refresh-item" onclick="refresh()" name="{{employee.id}}">Refresh</button>
+
+{{!-- <div class="title-name">
     <h2>Assign Item to {{employee.name}}</h2>
 </div>
 <div id="assign-container">
@@ -49,10 +71,11 @@
                                 <div id="referenceId">{{this.reference}}</div>
                                 <div id="stock-{{this.reference}}"></div>
                                 {{!-- <input type="number" name="reference" value="{{this.reference}}"> --}}
-                                <button type="button" id="assign-item" onclick="assign()"
+{{!-- <button type="button" id="assign-item" onclick="assign()"
                                     style="background-color: green;" name="{{this.reference}}">ASIGNAR</button>
                                 <button type="button" id="stock-item" onclick="stock()" style="background-color: grey;"
-                                    name="{{this.reference}}">Ver Stock</button>
+                                    name="{{this.reference}}">Ver
+                                    Stock</button>
                             </form>
                         </div>
                     </td>
@@ -62,4 +85,4 @@
         </table>
 
     </div>
-</div>
+</div> --}}
