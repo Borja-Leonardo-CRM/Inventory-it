@@ -19,17 +19,17 @@ const employees = [
   {
     name: "Leonardo Di Caprio",
     department: "Law",
-    equipmentsId: [200, 233]
+    equipmentsId: []
   },
   {
     name: "George Clooney",
     department: "Marketing",
-    equipmentsId: [332, 211]
+    equipmentsId: []
   },
   {
     name: "Keanu Reeves",
     department: "IT",
-    equipmentsId: [233, 55]
+    equipmentsId: []
   },
   {
     name: "Antonio Banderas",

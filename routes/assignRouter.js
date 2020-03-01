@@ -26,25 +26,30 @@ router.get(
   }
 );
 
-// Refresh
-
-router.get(
-  "/:id/refresh",
-  ensureLogin.ensureLoggedIn(),
-  async (req, res, next) => {
-    try {
-      const { id } = req.params;
-      const employee = await Employees.findById(id);
-      const equipment = await Equipments.find();
-      res.json({
-        employee,
-        equipment
-      });
-    } catch (error) {
-      console.log("Employee dont found");
-    }
-  }
-);
+// router.post("/newItem", async (req, res, next) => {
+//   const { item, e } = req.body;
+//   const id = e; // Id employee
+//   const reference = item;
+//   const referenceItem = toNumber(item);
+//   const dataReference = await Equipments.findOne({ reference: reference });
+//   const idItem = dataReference._id; // id of item
+//   let equipment;
+//   const employee = await Employees.findOneAndUpdate(
+//     {
+//       _id: id
+//     },
+//     {
+//       $push: {
+//         equipmentsId: dataReference
+//       }
+//     }
+//   );
+//   await Employees.findOne({ _id: id }).then(e => {
+//     equipment = e.equipmentsId;
+//     console.log("devulevo esto", employee);
+//   });
+//   res.json({ employee, equipment });
+// });
 
 router.post("/newItem", async (req, res, next) => {
   const { item, e } = req.body;
@@ -112,6 +117,21 @@ router.post("/removeItem", async (req, res, next) => {
   res.json({});
 });
 
+// Refresh
+
+router.get("/:id/refresh", async (req, res, next) => {
+  try {
+    const { id } = req.params;
+    const employee = await Employees.findById(id);
+    const equipment = await Equipments.find();
+    res.json({
+      employee,
+      equipment
+    });
+  } catch (error) {
+    console.log("Employee dont found");
+  }
+});
 // Show Stock
 
 router.post("/stock", async (req, res, next) => {

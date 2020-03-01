@@ -32,7 +32,7 @@ function assign() {
   console.log(item);
   axios
     .post(`/assign/newItem`, { item, e })
-    .then(refresh())
+    .then(console.log("-------- -------------->"))
     .catch(error => console.log("Oh No! Error is: ", error));
 }
 
@@ -56,7 +56,9 @@ function remove() {
   const item = event.target.name;
   axios
     .post(`/assign/removeItem`, { item, e })
-    .then(refresh())
+    .then(e => {
+      console.log(e);
+    })
     .catch(error => console.log("Oh No! Error is: ", error));
 }
 
