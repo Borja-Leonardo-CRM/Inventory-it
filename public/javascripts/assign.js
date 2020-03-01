@@ -60,8 +60,12 @@ function createCells(response) {
   }
 
   for (let i = 0; i < dataEquipment.length; i++) {
-    assignedContent += `<li><a href="/equipments/${dataEquipment[i]._id}"> Nombre : ${dataEquipment[i].name} Stock: ${dataEquipment[i].stock}<a><button type="button" id="assign-item" onclick="assign()"
-    style="background-color: green;" name="${dataEquipment[i].reference}">ASIGNAR</button></li>`;
+    if (dataEquipment[i].stock > 0) {
+      assignedContent += `<li><a href="/equipments/${dataEquipment[i]._id}"> Nombre : ${dataEquipment[i].name} Stock: ${dataEquipment[i].stock}<a><button type="button" id="assign-item" onclick="assign()"
+      style="background-color: green;" name="${dataEquipment[i].reference}">ASIGNAR</button></li>`;
+    } else {
+      console.log(dataEquipment[i], "haven't stock");
+    }
   }
 
   listAssigned.innerHTML = newContent;

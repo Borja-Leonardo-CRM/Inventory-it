@@ -1,21 +1,17 @@
-<ul>
-    <li>HOla</li>
-    {{#each employee.equipmentsId}}
-    <li>{{this.name}} - {{this.reference}} - {{this.stock}} <button type="button" id="{{employee.id}}"
-            onclick="remove()" style="background-color: red;" name="{{ this._id}}">ELIMINAR</button></li>
-    {{/each}}
-</ul>
+<div class="id" id="magna-assign">
+    <div id="assign-container-axios">
+        <h2>Current Items of {{employee.name}}</h2>
+        <ul class="list-assigned">
 
-<div id="assign-container-axios">
-    <ul class="list-assigned">
+        </ul>
+    </div>
 
-    </ul>
-</div>
+    <div id="assign-container-axios">
+        <h2>Available Items</h2>
+        <ul class="list-assign-do">
 
-<div id="assign-container-axios">
-    <ul class="list-assign-do">
-
-    </ul>
+        </ul>
+    </div>
 </div>
 
 <button type="button" id="refresh-item" onclick="refresh()" name="{{employee.id}}">Refresh</button>
