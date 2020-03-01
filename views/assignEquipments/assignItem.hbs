@@ -1,6 +1,8 @@
-<h2>Assign Item to {{employee.name}}</h2>
+<div class="title-name">
+    <h2>Assign Item to {{employee.name}}</h2>
+</div>
 <div id="assign-container">
-    <div class="current-equipments">
+    <div class="assign-container-child">
         <button id="refresh-item" onclick="refresh()" name="{{employee.id}}">Refresh</button>
         <table class="table table-hover" id="table-assign-1">
             <thead>
@@ -31,7 +33,7 @@
             </tbody>
         </table>
     </div>
-    <div class="current-equipments">
+    <div class="assign-container-child">
         <table class="table table-hover">
             <thead>
                 <tr>

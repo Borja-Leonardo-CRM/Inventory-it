@@ -1,26 +1,63 @@
+<div id="container-show-employee">
+
+    <h2>
+        </i>{{equipments.name}}
+
+    </h2>
+    <div class="container-show-elements">
+        <form method="POST">
+
+            <div class="box-elements">
+                <p>Reference</p>
+                <input type="number" name="reference" value="{{equipments.reference}}">
+            </div>
+            <div class="box-elements">
+                <p>Name</p>
+                <input type="text" name="name" value="{{equipments.name}}">
+            </div>
+            <div class="box-elements">
+                <p>Model</p>
+                <input type="text" name="model" value="{{equipments.model}}">
+            </div>
+            <div class="box-elements">
+                <p>Stock</p>
+                <input type="number" name="stock" value="{{equipments.stock}}">
+            </div>
+            <div class="box-elements">
+                <p>URL</p>
+                <input type="text" name="url" value="{{equipments.url}}">
+            </div>
+            <button>GUARDAR</button>
+        </form>
+    </div>
+</div>
+
+
+{{!-- 
+
 <div class="container" style="margin-top: 70px; text-align: center;">
     <h2>Item: {{equipments.name}}</h2>
-    <form id="form" method="POST">
-        <div>
-            <label for="refence">REFERENCE</label><br>
-            <input type="number" name="reference" value="{{equipments.reference}}">
-        </div>
-        <div>
-            <label for="name">NAME</label><br>
-            <input type="text" name="name" value="{{equipments.name}}">
-        </div>
-        <div>
-            <label for="model">MODEL</label><br>
-            <input type="text" name="model" value="{{equipments.model}}">
-        </div>
-        <div>
-            <label for="number">STOCK</label><br>
-            <input type="number" name="stock" value="{{equipments.stock}}">
-        </div>
-        <div>
-            <label for="url">URL</label><br>
-            <input type="text" name="url" value="{{equipments.url}}">
-        </div>
-        <button>GUARDAR</button>
+
+    <div>
+        <label for="refence">REFERENCE</label><br>
+        <input type="number" name="reference" value="{{equipments.reference}}">
+    </div>
+    <div>
+        <label for="name">NAME</label><br>
+        <input type="text" name="name" value="{{equipments.name}}">
+    </div>
+    <div>
+        <label for="model">MODEL</label><br>
+        <input type="text" name="model" value="{{equipments.model}}">
+    </div>
+    <div>
+        <label for="number">STOCK</label><br>
+        <input type="number" name="stock" value="{{equipments.stock}}">
+    </div>
+    <div>
+        <label for="url">URL</label><br>
+        <input type="text" name="url" value="{{equipments.url}}">
+    </div>
+    <button>GUARDAR</button>
     </form>
-</div>
+</div> --}}
