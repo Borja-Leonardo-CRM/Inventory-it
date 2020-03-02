@@ -5,6 +5,7 @@ body {
 }
 
 a {
+  color: black;
   text-decoration: none !important;
 }
 
@@ -130,6 +131,8 @@ $button-pink: #f25f4c;
   font-family: $font-Odi;
   font-size: $font-size-h2;
   letter-spacing: $spacing-h2;
+  display: flex;
+  justify-content: space-between;
 }
 
 .box-elements p {
@@ -267,21 +270,98 @@ $button-pink: #f25f4c;
 
 /* Page ASSIGN Styles*/
 
-/* Display or no table Assign */
+/* Tables */
 
-#table-assign-1 {
+#magna-assign {
+  display: flex;
+  justify-content: space-between;
+}
+
+#assign-container-axios {
+  width: 45%;
+  height: 85vh;
+  border: 4px solid $background-title-show-cards;
+}
+
+#assign-container-axios h2 {
+  background: $background-title-show-cards;
+  color: white;
+  padding: 0.4em;
+  font-weight: 800;
+  font-family: $font-Odi;
+  font-size: $font-size-h2;
+  letter-spacing: $spacing-h2;
+  display: flex;
+  justify-content: space-between;
+}
+
+#assign-container-axios ul li {
+  display: flex;
+  justify-content: space-between;
+  width: 95%;
+  margin: 0.5em 0;
+  font-family: $font-Oxa;
+  font-size: 1.5em;
+  color: black;
+  border-bottom: 3px solid $background-title-show-cards;
+}
+
+.stock-number {
   display: block;
 }
 
-#table-assign-2 {
+.hide {
   display: none;
 }
 
-#assign-container {
-  display: flex;
+// Bottoms
+
+#remove-idem {
+  background: red;
+  margin-bottom: 0.2em;
+  color: white;
+  font-size: 0.8em;
+  font-weight: 800;
 }
 
-.assign-container-child {
-  display: flex;
-  width: 50%;
+#assign-item {
+  background-color: green;
+  margin-bottom: 0.2em;
+  color: white;
+  font-size: 0.8em;
+  font-weight: 800;
 }
+
+/* LOGIN AND SIGNUP FORMS */
+
+#form {
+  width: 40%;
+  box-shadow: 0px 0px 16px 5px #c1c1c1;
+  padding: 5em;
+  border-radius: 20px;
+}
+
+#form h2 {
+  font-family: $font-Odi;
+  font-size: $font-size-h2;
+  letter-spacing: $spacing-h2;
+}
+
+#form label {
+  font-family: $font-Odi;
+  font-size: 1.5em;
+}
+
+/* Images */
+
+.icon-show {
+  width: 1.2em;
+}
+
+/*  BACKGROUND  */
+
+// #background-img {
+//   background-image: url(../images/fondo.png);
+//   background-repeat: no-repeat;
+//   background-size: cover;
+// }

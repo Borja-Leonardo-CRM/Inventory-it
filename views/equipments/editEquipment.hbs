@@ -2,7 +2,7 @@
 
     <h2>
         </i>{{equipments.name}}
-
+        <img src="/images/ordenador.svg" alt="icon-show" class="icon-show">
     </h2>
     <div class="container-show-elements">
         <form method="POST">
@@ -27,7 +27,9 @@
                 <p>URL</p>
                 <input type="text" name="url" value="{{equipments.url}}">
             </div>
-            <button>GUARDAR</button>
+            <div id="button-cruds" style="margin-top: 2em;">
+                <button class="button-edit">GUARDAR</button>
+            </div>
         </form>
     </div>
 </div>
