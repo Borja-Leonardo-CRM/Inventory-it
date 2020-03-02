@@ -588,6 +588,27 @@ const equipments = [
     stock: 30,
     url:
       "https://www.amazon.es/gp/browse.html?node=937994031&ref_=nav_em_T1_0_4_13_3__des"
+  },
+  {
+    name: "Mobile Phone",
+    model: "Apple Iphone xs",
+    stock: 30,
+    url:
+      "https://www.amazon.es/gp/browse.html?node=937994031&ref_=nav_em_T1_0_4_13_3__des"
+  },
+  {
+    name: "lightning cable",
+    model: "apple",
+    stock: 30,
+    url:
+      "https://www.amazon.es/gp/browse.html?node=937994031&ref_=nav_em_T1_0_4_13_3__des"
+  },
+  {
+    name: "Laptop",
+    model: "DELL",
+    stock: 20,
+    url:
+      "https://www.amazon.es/gp/browse.html?node=937994031&ref_=nav_em_T1_0_4_13_3__des"
   }
 ].map((e, i) => ({ ...e, reference: i }));
 
