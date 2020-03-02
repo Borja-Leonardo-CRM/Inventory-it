@@ -270,7 +270,7 @@ th {
   font-weight: 800; }
 
 /* LOGIN AND SIGNUP FORMS */
-#form {
+#form.form-plus {
   width: 40%;
   box-shadow: 0px 0px 16px 5px #c1c1c1;
   padding: 5em;
