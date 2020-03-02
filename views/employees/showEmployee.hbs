@@ -1,3 +1,47 @@
+<div id="container-show-employee">
+  <h2>
+    {{employee.name}}
+    <img src="../images/hombre.svg" alt="icon-show" class="icon-show"></h2>
+  <div class="container-show-elements">
+    <div class="box-elements">
+      <p>ID</p>
+      <ul>
+        <li>{{employee.identity}}</li>
+      </ul>
+    </div>
+
+    <div class="box-elements">
+      <p>Name</p>
+      <ul>
+        <li>{{employee.name}}</li>
+      </ul>
+    </div>
+    <div class="box-elements">
+      <p>Department</p>
+      <ul>
+        <li>{{employee.department}}</li>
+      </ul>
+    </div>
+    <div class="box-elements">
+      <p>Equipments</p>
+      <ul>
+        {{#each employee.equipmentsId}}
+        <li><a href="/equipments/{{this._id}}"> <i class="fa fa-caret-right"></i> {{this.name}}</li></a>
+        {{/each}}
+      </ul>
+    </div>
+  </div>
+  <div id="button-cruds">
+    <a href="/employees/{{employee._id}}/edit">
+      <div class="button-edit">EDITAR</div>
+    </a>
+    <a href="/assign/{{employee._id}}/assign">
+      <div class="button-assign">ASIGNAR</div>
+    </a>
+  </div>
+</div>
+
+
 <div class="container" style="margin-top: 70px; text-align: center">
   <div>
     <h2>Employee: {{employee.name}}</h2>
@@ -18,7 +62,7 @@
     <div>
       <label for="number">EQUIPMENT</label><br>
       {{#each employee.equipmentsId}}
-      <input type="number" name="equipmentsId" value="{{this}}" disabled="disabled">
+      <input type="number" name="equipmentsId" value="ñ{{name}}" disabled="disabled">
       {{/each}}
     </div>
   </form>

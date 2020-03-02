@@ -1,3 +1,50 @@
+<div id="container-show-employee">
+    <h2>
+        {{equipments.name}}
+        <img src="../images/ordenador.svg" alt="icon-show" class="icon-show"></h2>
+    <div class="container-show-elements">
+        <div class="box-elements">
+            <p>Rerefence</p>
+            <ul>
+                <li>{{equipments.reference}}</li>
+            </ul>
+        </div>
+
+        <div class="box-elements">
+            <p>Name</p>
+            <ul>
+                <li>{{equipments.name}}</li>
+            </ul>
+        </div>
+        <div class="box-elements">
+            <p>Model</p>
+            <ul>
+                <li>{{equipments.model}}</li>
+            </ul>
+        </div>
+        <div class="box-elements">
+            <p>Stock</p>
+            <ul>
+                <li>{{equipments.stock}}</li>
+            </ul>
+        </div>
+        <div class="box-elements">
+            <p>URL</p>
+            <ul>
+                <a href="{{equipments.url}}">
+                    <li>{{equipments.url}}</li>
+                </a>
+            </ul>
+        </div>
+    </div>
+    <div id="button-cruds">
+        <a href="/equipments/{{equipments._id}}/edit">
+            <div class="button-edit">EDITAR</div>
+        </a>
+
+    </div>
+</div>
+
 
 <div class="container" style="margin-top: 70px; text-align: center;">
     <h2>Item: {{equipments.name}}</h2>
