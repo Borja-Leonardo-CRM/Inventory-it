@@ -1,7 +1,10 @@
 body {
-  margin-top: 50px;
-  padding: 50px;
+  margin: 0px;
+  padding: 0px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif; }
+
+#menu {
+  background-color: #a7a9be; }
 
 a {
   color: black;
@@ -56,19 +59,27 @@ a {
 
 .add_new {
   flex-direction: row;
-  text-align: end; }
+  background-color: #ff8906;
+  color: white;
+  padding: 0.8em;
+  border-radius: 10px;
+  text-align: center;
+  font-weight: 800;
+  font-size: 1.5em;
+  text-decoration: none !important; }
 
-.main-container {
-  margin-top: 10px; }
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 50px;
+  width: 110vw; }
 
 td a {
   display: block; }
 
-input:required:invalid,
-input:focus:invalid {
-  -moz-box-shadow: none; }
-
 .tableFixHead {
+  background-color: #a7a9be;
   overflow-y: auto;
   height: 500px; }
 
@@ -94,7 +105,7 @@ th {
   border: 4px solid #343a40;
   background: #f1f1f1;
   padding: 1em;
-  width: 50%;
+  width: 75%;
   margin: 0 auto; }
 
 #container-show-employee h2 {
@@ -262,7 +273,7 @@ th {
   font-weight: 800; }
 
 /* LOGIN AND SIGNUP FORMS */
-#form {
+#form.form-plus {
   width: 40%;
   box-shadow: 0px 0px 16px 5px #c1c1c1;
   padding: 5em;
@@ -280,6 +291,23 @@ th {
 /* Images */
 .icon-show {
   width: 1.2em; }
+
+/* button edit/remove*/
+.edit-btt {
+  padding: 0.2em;
+  background: #3dc53d;
+  font-weight: 800;
+  border: 2px solid white;
+  text-align: center;
+  border-radius: 7px; }
+
+.remove-btt {
+  padding: 0.2em;
+  background: #e63f3e;
+  font-weight: 800;
+  border: 2px solid white;
+  text-align: center;
+  border-radius: 7px; }
 
 /*  BACKGROUND  */
 
