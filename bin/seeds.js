@@ -1,3 +1,4 @@
+require("dotenv").config();
 const mongoose = require("mongoose");
 
 const Employee = require("../models/Employees");
@@ -5,7 +6,7 @@ const Equipments = require("../models/Equipments");
 
 const DB_NAME = "invetory-db";
 
-mongoose.connect(`mongodb://localhost/${DB_NAME}`, {
+mongoose.connect(process.env.DBURL, {
   useCreateIndex: true,
   useNewUrlParser: true,
   useUnifiedTopology: true
@@ -18,17 +19,17 @@ const employees = [
   {
     name: "Leonardo Di Caprio",
     department: "Law",
-    equipmentsId: [200, 233]
+    equipmentsId: []
   },
   {
     name: "George Clooney",
     department: "Marketing",
-    equipmentsId: [332, 211]
+    equipmentsId: []
   },
   {
     name: "Keanu Reeves",
     department: "IT",
-    equipmentsId: [233, 55]
+    equipmentsId: []
   },
   {
     name: "Antonio Banderas",

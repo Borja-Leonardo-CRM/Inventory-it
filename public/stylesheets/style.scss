@@ -5,7 +5,8 @@ body {
 }
 
 a {
-  color: #00b7ff;
+  color: black;
+  text-decoration: none !important;
 }
 
 #form {
@@ -101,12 +102,266 @@ th {
   background: #eee;
 }
 
-/* Display or no table Assign */
+/* Page Show Employee*/
 
-#table-assign-1 {
+/* Card of employee */
+
+$background-title-show-cards: #343a40;
+$background-show-cards: #f1f1f1;
+$font-Oxa: "Oxanium";
+$font-Odi: "Odibee Sans";
+$font-size-h2: 3em;
+$spacing-h2: 0.15em;
+$button-orange: #ff8906;
+$button-pink: #f25f4c;
+
+#container-show-employee {
+  border: 4px solid $background-title-show-cards;
+  background: $background-show-cards;
+  padding: 1em;
+  width: 50%;
+  margin: 0 auto;
+}
+
+#container-show-employee h2 {
+  background: $background-title-show-cards;
+  color: white;
+  padding: 0.4em;
+  font-weight: 800;
+  font-family: $font-Odi;
+  font-size: $font-size-h2;
+  letter-spacing: $spacing-h2;
+  display: flex;
+  justify-content: space-between;
+}
+
+.box-elements p {
+  border-bottom: 3px solid $background-title-show-cards;
+  padding: 1em 0.5em;
+  font-family: $font-Oxa;
+  font-size: 1.5em;
+  font-weight: 800;
+}
+
+.box-elements ul {
+  font-family: $font-Oxa;
+  font-size: 1.4em;
+  list-style-type: none;
+}
+
+#button-cruds {
+  display: flex;
+  justify-content: space-around;
+}
+
+.button-edit,
+.button-assign {
+  padding: 1.3em 3em;
+  border-radius: 20px;
+  font-family: $font-Oxa;
+  font-weight: 800;
+  font-size: 1.5em;
+  color: white;
+}
+
+.button-edit {
+  background: $button-orange;
+}
+
+.button-assign {
+  background: $button-pink;
+}
+
+.button-edit:hover {
+  background: linear-gradient(93deg, $button-orange, #000000);
+  background-size: 400% 400%;
+
+  -webkit-animation: AnimationName 6s ease infinite;
+  -moz-animation: AnimationName 6s ease infinite;
+  animation: AnimationName 6s ease infinite;
+
+  @-webkit-keyframes AnimationName {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+  @-moz-keyframes AnimationName {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+  @keyframes AnimationName {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+}
+
+.button-assign:hover {
+  background: linear-gradient(93deg, $button-pink, #000000);
+  background-size: 400% 400%;
+
+  -webkit-animation: AnimationName 6s ease infinite;
+  -moz-animation: AnimationName 6s ease infinite;
+  animation: AnimationName 6s ease infinite;
+
+  @-webkit-keyframes AnimationName {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+  @-moz-keyframes AnimationName {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+  @keyframes AnimationName {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+}
+
+/* Page EDIT Styles  */
+
+.box-elements input {
+  width: 100%;
+  padding: 0.8em 2em;
+  border-radius: 5px;
+  font-family: $font-Oxa;
+  font-size: 1.2em;
+}
+
+/* Page ASSIGN Styles*/
+
+/* Tables */
+
+#magna-assign {
+  display: flex;
+  justify-content: space-between;
+}
+
+#assign-container-axios {
+  width: 45%;
+  height: 85vh;
+  border: 4px solid $background-title-show-cards;
+}
+
+#assign-container-axios h2 {
+  background: $background-title-show-cards;
+  color: white;
+  padding: 0.4em;
+  font-weight: 800;
+  font-family: $font-Odi;
+  font-size: $font-size-h2;
+  letter-spacing: $spacing-h2;
+  display: flex;
+  justify-content: space-between;
+}
+
+#assign-container-axios ul li {
+  display: flex;
+  justify-content: space-between;
+  width: 95%;
+  margin: 0.5em 0;
+  font-family: $font-Oxa;
+  font-size: 1.5em;
+  color: black;
+  border-bottom: 3px solid $background-title-show-cards;
+}
+
+.stock-number {
   display: block;
 }
 
-table-assign-2 {
+.hide {
   display: none;
 }
+
+// Bottoms
+
+#remove-idem {
+  background: red;
+  margin-bottom: 0.2em;
+  color: white;
+  font-size: 0.8em;
+  font-weight: 800;
+}
+
+#assign-item {
+  background-color: green;
+  margin-bottom: 0.2em;
+  color: white;
+  font-size: 0.8em;
+  font-weight: 800;
+}
+
+/* LOGIN AND SIGNUP FORMS */
+
+#form {
+  width: 40%;
+  box-shadow: 0px 0px 16px 5px #c1c1c1;
+  padding: 5em;
+  border-radius: 20px;
+}
+
+#form h2 {
+  font-family: $font-Odi;
+  font-size: $font-size-h2;
+  letter-spacing: $spacing-h2;
+}
+
+#form label {
+  font-family: $font-Odi;
+  font-size: 1.5em;
+}
+
+/* Images */
+
+.icon-show {
+  width: 1.2em;
+}
+
+/*  BACKGROUND  */
+
+// #background-img {
+//   background-image: url(../images/fondo.png);
+//   background-repeat: no-repeat;
+//   background-size: cover;
+// }

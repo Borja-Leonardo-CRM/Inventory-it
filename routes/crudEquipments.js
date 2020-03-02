@@ -1,9 +1,11 @@
 const express = require("express");
 const router = express.Router();
 const Equipments = require("../models/Equipments");
+const { isLoggedIn, isLoggedOut } = require("../lib/isLoggedMiddleware");
+const ensureLogin = require("connect-ensure-login");
 
 // INDEX - show all equipments
-router.get("/", function(req, res) {
+router.get("/", ensureLogin.ensureLoggedIn(), function(req, res) {
   if (req.query.search) {
     const regex = new RegExp(escapeRegex(req.query.search), "gi");
     // Get all the equipments from DB
@@ -27,19 +29,23 @@ router.get("/", function(req, res) {
 });
 
 // REMOVE EQUIPMENTS
-router.get("/:id/remove", async (req, res, next) => {
-  const id = req.params.id;
-  try {
-    await Equipments.findByIdAndRemove(id);
-    return res.redirect("/equipments");
-  } catch {
-    next();
+router.get(
+  "/:id/remove",
+  ensureLogin.ensureLoggedIn(),
+  async (req, res, next) => {
+    const id = req.params.id;
+    try {
+      await Equipments.findByIdAndRemove(id);
+      return res.redirect("/equipments");
+    } catch {
+      next();
+    }
   }
-});
+);
 
 /* ADD NEW EQUIPMETS */
 
-router.get("/add", async (req, res, next) => {
+router.get("/add", ensureLogin.ensureLoggedIn(), async (req, res, next) => {
   return res.render("equipments/newEquipment");
 });
 
@@ -60,18 +66,22 @@ router.post("/add", async (req, res, next) => {
 });
 
 /* GET find a equipments according to its id and EDIT*/
-router.get("/:id/edit", async (req, res, next) => {
-  try {
-    const { id } = req.params;
-    const equipments = await Equipments.findById(id);
-    res.render("equipments/editEquipment", {
-      equipments
-    });
-    console.log(req.params); // ELIMINAR <----------------------- OJO!
-  } catch (error) {
-    console.log(`"Equipments".js - Error finding equipments by id ${error}`);
+router.get(
+  "/:id/edit",
+  ensureLogin.ensureLoggedIn(),
+  async (req, res, next) => {
+    try {
+      const { id } = req.params;
+      const equipments = await Equipments.findById(id);
+      res.render("equipments/editEquipment", {
+        equipments
+      });
+      console.log(req.params); // ELIMINAR <----------------------- OJO!
+    } catch (error) {
+      console.log(`"Equipments".js - Error finding equipments by id ${error}`);
+    }
   }
-});
+);
 
 /* POST Edit equipmets */
 
@@ -94,7 +104,7 @@ router.post("/:id/edit", async (req, res, next) => {
 });
 
 /* GET find a equipments according to its id */
-router.get("/:id", async (req, res, next) => {
+router.get("/:id", ensureLogin.ensureLoggedIn(), async (req, res, next) => {
   try {
     const { id } = req.params;
     const equipments = await Equipments.findById(id);
