@@ -104,7 +104,9 @@ th {
   font-weight: 800;
   font-family: "Odibee Sans";
   font-size: 3em;
-  letter-spacing: 0.15em; }
+  letter-spacing: 0.15em;
+  display: flex;
+  justify-content: space-between; }
 
 .box-elements p {
   border-bottom: 3px solid #343a40;
@@ -226,7 +228,8 @@ th {
   font-family: "Odibee Sans";
   font-size: 3em;
   letter-spacing: 0.15em;
-  text-align: center; }
+  display: flex;
+  justify-content: space-between; }
 
 #assign-container-axios ul li {
   display: flex;
@@ -237,6 +240,9 @@ th {
   font-size: 1.5em;
   color: black;
   border-bottom: 3px solid #343a40; }
+
+.stock-number {
+  display: block; }
 
 .hide {
   display: none; }
@@ -254,5 +260,27 @@ th {
   color: white;
   font-size: 0.8em;
   font-weight: 800; }
+
+/* LOGIN AND SIGNUP FORMS */
+#form {
+  width: 40%;
+  box-shadow: 0px 0px 16px 5px #c1c1c1;
+  padding: 5em;
+  border-radius: 20px; }
+
+#form h2 {
+  font-family: "Odibee Sans";
+  font-size: 3em;
+  letter-spacing: 0.15em; }
+
+#form label {
+  font-family: "Odibee Sans";
+  font-size: 1.5em; }
+
+/* Images */
+.icon-show {
+  width: 1.2em; }
+
+/*  BACKGROUND  */
 
 /*# sourceMappingURL=style.css.map */

@@ -1,20 +1,20 @@
 <div class="id" id="magna-assign">
     <div id="assign-container-axios">
-        <h2>Current Items of {{employee.name}}</h2>
+        <h2>Current Items of {{employee.name}} <img src="/images/hombre.svg" alt="icon-show" class="icon-show"></h2>
         <ul class="list-assigned">
 
         </ul>
     </div>
 
     <div id="assign-container-axios">
-        <h2>Available Items</h2>
+        <h2>Available Items <img src="/images/ordenador.svg" alt="icon-show" class="icon-show"></h2>
         <ul class="list-assign-do">
 
         </ul>
     </div>
 </div>
 
-<button type="button" id="refresh-item" onclick="refresh()" name="{{employee.id}}">Refresh</button>
+<button type="button" id="refresh-item" onclick="refresh()" name="{{employee.id}}" class="hide">Refresh</button>
 
 {{!-- <div class="title-name">
     <h2>Assign Item to {{employee.name}}</h2>
