@@ -8,29 +8,29 @@
     </form>
   </p>
 </div>
-<div class="tableFixHead">
-  <table class="table table-hover">
-    <thead>
-      <tr>
-        <th>IDENTITY</th>
-        <th>NAME</th>
-        <th>DEPARTMENT</th>
-        <th>EQUIPMENT</th>
-      </tr>
-    </thead>
-    <tbody>
-      {{#each employees}}
-      <tr>
-        <td> {{ identity }}</a></td>
-        <td><a href="/employees/{{_id}}">{{ name }}</a></td>
-        <td><a href="/employees/{{_id}}">{{ department }}</a></td>
-        <td><a href="/employees/{{_id}}">{{ this.equipmentsId.length }}</a></td>
-      </tr>
-      </a>
-      {{/each}}
-    </tbody>
-  </table>
-</div>
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>IDENTITY</th>
+      <th>NAME</th>
+      <th>DEPARTMENT</th>
+      <th>EQUIPMENT</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each employees}}
+    <tr>
+      <td> {{ identity }}</a></td>
+      <td><a href="/employees/{{_id}}">{{ name }}</a></td>
+      <td><a href="/employees/{{_id}}">{{ department }}</a></td>
+      <td><a href="/employees/{{_id}}">{{ this.equipmentsId.length }}</a></td>
+    </tr>
+    </a>
+    {{/each}}
+  </tbody>
+</table>
+
 <div class="add_new">
   <a href="/employees/new" class="btn">Add new</a>
 </div>
