@@ -6,7 +6,7 @@ This project is part of the second module of Ironhack´s bootcamp - Madrid
 
 The main objective of this application is to facilitate the management and control of telecommunication and computer equipment, by signing a user with the equipment that he will use to carry out his work within an organization.
 
-The application initially has an signin form, if you are a user it takes you directly to the screen of the employees to which they will add their respective equipment and if you are not registered, then it will send you to a registration form to be able to do it.
+The application initially has an signin form, if you are a user it takes you directly to the screen of the employees to which they will add their respective equipment and if you are not registered, then it will send you to a registration form to be able to make use of it.
 
 The application is divided into two tables, the employees and equipment and both can be edited with edit and delete buttoms to modify and delete items.
 
