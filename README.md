@@ -16,7 +16,7 @@ A search bar for employees and equipment that took us a lilte bit more time to a
 
 The most complicated part was being able to sign each device to a specific user, we used axios so that the calls were ajax and thus being able to have something of Single Page technology on the page.
 
-We whis we could have had some more time to get the CSS part to a higher level and to show the equipment each employee has on he´s, her´s profile instead the reference number.
+We wish we could have had some more time to get the CSS part to a higher level and to show the equipment each employee has on he´s, her´s profile instead the reference number.
  
 
 
